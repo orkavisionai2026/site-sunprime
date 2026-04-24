@@ -26,8 +26,8 @@ export default function SobrePage() {
               <Reveal key={i} delay={0.08 * i}>
                 <p
                   className={`
-                    display leading-[1.05] text-paper-50
-                    ${i === 0 ? 'text-5xl md:text-7xl' : 'text-3xl md:text-5xl'}
+                    display leading-[1.08] text-paper-50
+                    ${i === 0 ? 'text-4xl md:text-7xl' : 'text-2xl md:text-5xl'}
                     ${i % 2 === 1 ? 'md:pl-16 text-gold-400 italic' : ''}
                   `}
                 >

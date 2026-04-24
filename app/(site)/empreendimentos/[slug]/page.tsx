@@ -42,7 +42,7 @@ export default function EmpreendimentoPage({ params }: { params: Params }) {
         <div className="absolute inset-x-0 bottom-0 mx-auto max-w-7xl px-6 pb-16 md:px-10">
           <Reveal>
             <span className="eyebrow">{emp.status.titulo}</span>
-            <h1 className="display mt-4 text-6xl text-paper-50 md:text-8xl lg:text-[10rem]">
+            <h1 className="display mt-4 text-5xl leading-[1.02] text-paper-50 sm:text-6xl md:text-8xl lg:text-[10rem]">
               {emp.nome}
             </h1>
             {emp.localizacao?.cidade && (

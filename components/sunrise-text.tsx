@@ -15,13 +15,13 @@ type Props = {
 };
 
 /**
- * "Amanhecer" — cada letra nasce escura + dessaturada (como se estivesse
- * sob a luz ainda fraca antes do sol aparecer), sobe um pouco e vai clareando
- * + recuperando a saturação até chegar ao estado natural.
+ * "Amanhecer" letra-por-letra: cada letra nasce escura + dessaturada +
+ * desfocada, sobe 0.4em e vai clareando/focando até o estado natural.
  *
- * O filtro `brightness + saturate` é agnóstico à cor original da letra,
- * então funciona tanto no branco do "Diferente" quanto no dourado do
- * "porque você é." sem precisar saber a cor final.
+ * Arquitetura das palavras: cada palavra vira um `<span inline-block>` que é
+ * atômico no layout (as letras dentro não quebram no meio), e entre palavras
+ * há espaço natural que permite wrap. Essencial para mobile — antes as
+ * letras quebravam no meio de "Diferente" em telas estreitas.
  */
 export function SunriseText({
   children,
@@ -37,35 +37,52 @@ export function SunriseText({
     return <span className={className}>{children}</span>;
   }
 
-  const chars = [...children];
+  const words = children.split(' ');
+  let letterIndex = 0;
 
   return (
     <span className={className} aria-label={children}>
-      {chars.map((char, i) => {
-        if (char === ' ') return <Fragment key={i}> </Fragment>;
-        return (
-          <m.span
-            key={i}
+      {words.map((word, wi) => {
+        const wordChars = [...word];
+        const wordContent = (
+          <span
+            className="inline-block whitespace-nowrap align-baseline"
             aria-hidden
-            className="inline-block"
-            initial={{
-              opacity: 0.15,
-              y: '0.4em',
-              filter: 'brightness(0.15) saturate(0.35) blur(4px)',
-            }}
-            animate={{
-              opacity: 1,
-              y: 0,
-              filter: 'brightness(1) saturate(1) blur(0px)',
-            }}
-            transition={{
-              delay: delay + i * stagger,
-              duration,
-              ease,
-            }}
           >
-            {char}
-          </m.span>
+            {wordChars.map((char, ci) => {
+              const i = letterIndex++;
+              return (
+                <m.span
+                  key={ci}
+                  className="inline-block"
+                  initial={{
+                    opacity: 0.15,
+                    y: '0.4em',
+                    filter: 'brightness(0.15) saturate(0.35) blur(4px)',
+                  }}
+                  animate={{
+                    opacity: 1,
+                    y: 0,
+                    filter: 'brightness(1) saturate(1) blur(0px)',
+                  }}
+                  transition={{
+                    delay: delay + i * stagger,
+                    duration,
+                    ease,
+                  }}
+                >
+                  {char}
+                </m.span>
+              );
+            })}
+          </span>
+        );
+
+        return (
+          <Fragment key={wi}>
+            {wordContent}
+            {wi < words.length - 1 && ' '}
+          </Fragment>
         );
       })}
     </span>

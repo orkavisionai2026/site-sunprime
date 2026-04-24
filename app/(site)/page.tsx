@@ -25,13 +25,13 @@ export default function HomePage() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-ink-950/60 via-ink-950/30 to-ink-950" />
 
-        <div className="relative z-10 mx-auto flex h-full max-w-7xl flex-col justify-between px-6 pt-40 pb-16 md:px-10">
+        <div className="relative z-10 mx-auto flex h-full max-w-7xl flex-col justify-between px-6 pt-28 pb-10 md:px-10 md:pt-40 md:pb-16">
           <Reveal>
             <span className="eyebrow">Sunprime · Itapema · desde {institucional.anoFundacao}</span>
           </Reveal>
 
           <div className="max-w-5xl">
-            <h1 className="display text-display sm:text-display-lg lg:text-display-xl text-paper-50">
+            <h1 className="display text-5xl leading-[1.02] text-paper-50 sm:text-7xl lg:text-display-lg xl:text-display-xl">
               <SunriseText delay={0.4}>Diferente</SunriseText>
               <br />
               <SunriseText delay={1.1} className="italic text-gold-400">
@@ -39,7 +39,7 @@ export default function HomePage() {
               </SunriseText>
             </h1>
             <Reveal delay={0.3}>
-              <p className="mt-8 max-w-xl text-lg text-ink-200 md:text-xl">
+              <p className="mt-6 max-w-xl text-base text-ink-200 sm:text-lg md:mt-8 md:text-xl">
                 Projetamos espaços com design inspirador. Uma explosão de formas que
                 transforma o skyline das cidades.
               </p>
