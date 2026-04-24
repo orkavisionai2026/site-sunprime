@@ -1,0 +1,85 @@
+{
+  "url_original": "https://www.sunprime.com.br/sobre",
+  "extraido_em": "2026-04-24",
+  "secoes": {
+    "manifesto": {
+      "titulo": "Nosso manifesto",
+      "paragrafos": [
+        "Somos um organismo efervescente. Uma fonte borbulhante de ideias.",
+        "Projetamos espaços com design inspirador.",
+        "Uma explosão de formas.",
+        "Driblamos a mesmice com ousadia.",
+        "Somos a inspiração que muda a percepção.",
+        "Nós somos a Sunprime. Viemos para transformar o skyline das cidades.",
+        "Somos energia para um novo viver: urbano, humano, inovador."
+      ]
+    },
+    "missao": {
+      "titulo": "Nossa missão",
+      "texto": "Impactar a vida das pessoas através do design e da arquitetura, proporcionando experiências únicas.",
+      "imagem": "https://www.sunprime.com.br/upload/site_texto/38.png",
+      "arquivo_local": "/public/extracted-images/_institucional/missao.png"
+    },
+    "valores": {
+      "titulo": "Nossos Valores",
+      "lista": [
+        {
+          "nome": "Fé",
+          "descricao": "Somos guiados pelos princípios cristãos. Acreditamos naquilo que fazemos."
+        },
+        {
+          "nome": "Criatividade",
+          "descricao": "Nós pensamos diferente, fora da caixa. Buscamos inovar para gerar resultados originais."
+        },
+        {
+          "nome": "Integridade",
+          "descricao": "Acreditamos que é preciso dizer o que pensamos e agimos sempre corretamente."
+        },
+        {
+          "nome": "Autenticidade",
+          "descricao": "Somos únicos, genuínos e fiéis à nossa verdade."
+        }
+      ]
+    },
+    "quemSomos": {
+      "titulo": "Quem Somos",
+      "fundacao_ano": 2012,
+      "ceo": {
+        "nome": "Eduardo Pastor",
+        "cargo": "CEO - Sunprime Empreendimentos",
+        "foto": "https://www.sunprime.com.br/upload/site_texto/43.png",
+        "arquivo_local": "/public/extracted-images/_institucional/ceo-eduardo-pastor.png",
+        "headline_1": "Cada projeto da Sunprime conta uma história.",
+        "paragrafos": [
+          "Pensamos não apenas do tapume para dentro, mas também do tapume para fora. Entregamos prédios que impactam a vida das pessoas, das cidades e dos turistas que nos visitam.",
+          "Em 2012, nossa paixão pelo mercado imobiliário transformou-se em uma revolução criativa, marcada pela inovação e ousadia, com uma visão única que redefine o horizonte urbano por meio de projetos que unem design, arquitetura e arte."
+        ]
+      },
+      "quote_dna": {
+        "texto": "Eu carrego no meu DNA o empreendedorismo. A inquietação de sair do status quo e buscar aquilo que tem mais atual e autêntico.",
+        "imagem": "https://www.sunprime.com.br/upload/site_texto/44.png",
+        "arquivo_local": "/public/extracted-images/_institucional/quote-dna.png"
+      },
+      "tagline_final": "Nunca é apenas um prédio vindo da Sunprime."
+    }
+  },
+  "rodape": {
+    "tagline": "Diferente porque você é.",
+    "endereco": "Rua 294, 294 - Meia Praia, Itapema - SC",
+    "telefone": "(47) 3264-0022",
+    "whatsapp": "(47) 9293-8651",
+    "whatsapp_url": "https://api.whatsapp.com/send?phone=554792938651",
+    "email": "contato@sunprime.com.br",
+    "horario": "Segunda a sexta-feira, 08h às 12h | 13:30 às 18h",
+    "redes_sociais": {
+      "facebook": "https://www.facebook.com/sunprimeemp",
+      "instagram": "https://www.instagram.com/sunprimeemp/"
+    },
+    "copyright_atual": "© Copyright 2022 - Sunprime Empreendimentos"
+  },
+  "analytics_detectados": {
+    "ga4": "G-R6LH1NWWC0",
+    "recaptcha_site_key": "6LcJA_IrAAAAAHh8PuKFz0R4Fo4wTXMkfbJFyL3v",
+    "rd_station_loader": "759da3b0-1053-45b6-a92b-e9b3ac7e2ffb"
+  }
+}

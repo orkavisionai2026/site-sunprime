@@ -1,0 +1,15 @@
+{
+  "url_tentada": "https://www.sunprime.com.br/blog",
+  "status_http": 404,
+  "extraido_em": "2026-04-24",
+  "situacao": "Página /blog retorna 404 real (página de erro do CMS).",
+  "observacoes": [
+    "O menu de navegação e o rodapé do site atual linkam para /blog, mas a rota está quebrada — nenhum post acessível.",
+    "Não há sitemap.xml público.",
+    "robots.txt só desallowa /cgi-bin/ e /wusage.",
+    "No <head> do menu, a linha <li class=\"nav-item\"> do Blog está COMENTADA (<!--li ... -->), confirmando que foi desativada manualmente pela Sunprime, embora o link do rodapé ainda aparente.",
+    "Não foi possível inferir URLs de posts individuais por força bruta sem causar carga desnecessária no servidor."
+  ],
+  "recomendacao_para_cms": "Implementar módulo /blog no Sanity com schema postBlog como planejado, porém deixá-lo oculto do menu até que a Sunprime defina se quer retomar o blog. Se o cliente fornecer posts antigos exportados, importar via seed.",
+  "posts_migrados": []
+}

@@ -1,0 +1,447 @@
+[
+  {
+    "slug": "suncool-tower",
+    "id_original": 72,
+    "url_original": "https://www.sunprime.com.br/empreendimento/5/72",
+    "status": "Entregues",
+    "render_principal": "https://www.sunprime.com.br/upload/site_servico/72.png",
+    "logo": "https://www.sunprime.com.br/upload/site_servico_logo/72.png",
+    "descricao": "Suncool Tower é o desprendimento. O lifestyle despojado. O entusiasmo.\n\nÉ a vida em alto astral. Combina com alma leve e boas energias. É vigor, jovialidade. A desconstrução das ideias prontas. A flexibilidade do conforto.\n\nSuncool foi planejado para atender às necessidades do dia a dia. É autêntico, prático, funcional. \n\nBe Cool, Suncool.",
+    "hotsite": null,
+    "galeria": [
+      "https://www.sunprime.com.br/upload/site_servico/imagens/765.jpg",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/766.jpg",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/767.jpg",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/768.jpg",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/769.jpg",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/770.jpg"
+    ],
+    "foto_adicional": "https://www.sunprime.com.br/upload/site_servico_adicional/72.jpg",
+    "ficha_tecnica_texto": "Pavimentos: 07\nAndares de apartamentos: 05\nAndares de garagens: 02\nApartamentos: 10\nApartamentos por andar: 02\nApartamento tipo:\nTipo 1: duas suítes / 66 m2\n\nTipo 2: uma suíte e duas demi-suítes / 88 m2\n\nÁrea total do empreendimento: 1814.39m²",
+    "arquitetos_e_parceiros": [],
+    "localizacao": {
+      "endereco": null,
+      "lat": -27.13534072876067,
+      "lon": -48.612440070668455,
+      "iframe_src": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3550.665599765123!2d-48.612440070668455!3d-27.13534072876067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94d8af63c08acc69:0x70fca767722a093f!2sSuncool Tower!5e0!3m2!1spt-BR!2sbr!4v1663080513261!5m2!1spt-BR!2sbr"
+    },
+    "disclaimer": null
+  },
+  {
+    "slug": "sunsky-tower",
+    "id_original": 71,
+    "url_original": "https://www.sunprime.com.br/empreendimento/5/71",
+    "status": "Entregues",
+    "render_principal": "https://www.sunprime.com.br/upload/site_servico/71.png",
+    "logo": "https://www.sunprime.com.br/upload/site_servico_logo/71.png",
+    "descricao": "A imensidão do horizonte à sua frente. O encontro do céu com o mar, contemplado do seu apartamento. Com dois modelos de plantas para o mesmo apartamento, é possível remover paredes e personalizar o seu ambiente. O morador pode transformar dois dormitórios do apartamento tipo 1 em uma suíte de 32m².\n\nUm empreendimento singular, com arquitetura contemporânea e que surpreende do primeiro ao último andar. \n\nO Sunsky Tower possui áreas comuns fora do comum, como Lounge Grill, bar e três salões de festa. O rooftop, com 318 m², oferece espaços cobertos e ao ar livre com uma vista encantadora.",
+    "hotsite": null,
+    "galeria": [
+      "https://www.sunprime.com.br/upload/site_servico/imagens/756.jpg",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/757.jpg",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/758.jpg",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/759.jpg",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/760.jpg",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/761.jpg",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/762.jpg",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/763.jpg",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/764.jpg"
+    ],
+    "foto_adicional": "https://www.sunprime.com.br/upload/site_servico_adicional/71.jpg",
+    "ficha_tecnica_texto": "Pavimentos: 21\nAndares de apartamentos: 14\nAndares de garagens: 04\nApartamentos: 28\nApartamentos por andar: 02\nSalas comerciais: 04\nApartamento tipo:\nTipo 1: quatro suítes / 175 m2\n\nTipo 2: três suítes / 135 m2\n\nÁrea total do empreendimento: 9177.27m²",
+    "arquitetos_e_parceiros": [
+      {
+        "nome": "Rodrigo Kirck",
+        "descricao": null,
+        "imagem": "https://www.sunprime.com.br/upload/site_arquiteto/2.jpg",
+        "quote": null
+      }
+    ],
+    "localizacao": {
+      "endereco": null,
+      "lat": -27.128970383035067,
+      "lon": -48.607187484554885,
+      "iframe_src": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3550.8679019887354!2d-48.607187484554885!3d-27.128970383035067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94d8ae2997cc494d:0x87f7ac324038b40f!2sSunsky Tower!5e0!3m2!1spt-BR!2sbr!4v1663080274618!5m2!1spt-BR!2sbr"
+    },
+    "disclaimer": null
+  },
+  {
+    "slug": "sunview-tower",
+    "id_original": 70,
+    "url_original": "https://www.sunprime.com.br/empreendimento/5/70",
+    "status": "Entregues",
+    "render_principal": "https://www.sunprime.com.br/upload/site_servico/70.png",
+    "logo": "https://www.sunprime.com.br/upload/site_servico_logo/70.png",
+    "descricao": "Inteligência construtiva, arquitetura contemporânea e a liberdade que você sempre desejou para viver.\n\n Janelas panorâmicas, que vão do chão ao teto, proporcionando uma maior sensação de liberdade e uma vista incrível da cidade. Um panorama de belezas até onde a vista alcança.\n\nSunview Tower foi um empreendimento visionário. Seu rooftop, um espaço pioneiro nas edificações da cidade, conta com 561m², pé-direito prolongado e um misto de áreas cobertas e ao ar livre.",
+    "hotsite": null,
+    "galeria": [
+      "https://www.sunprime.com.br/upload/site_servico/imagens/750.jpg",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/751.jpg",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/752.jpg",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/753.jpg",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/754.jpg",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/755.jpg"
+    ],
+    "foto_adicional": "https://www.sunprime.com.br/upload/site_servico_adicional/70.jpg",
+    "ficha_tecnica_texto": "Pavimentos: 17\nAndares de apartamentos: 12\nAndares de garagens: 03\nApartamentos: 48\nApartamentos por andar: 04\nSalas comerciais: 09\nApartamento tipo:\nTipo 1: três suítes / 127 m2\n\nTipos 2 e 3: três suítes / 122 m2\n\nTipo 4 : três suítes / 120 m2\n\nÁrea total do empreendimento: 11749.91m²",
+    "arquitetos_e_parceiros": [
+      {
+        "nome": "Rodrigo Kirck",
+        "descricao": null,
+        "imagem": "https://www.sunprime.com.br/upload/site_arquiteto/2.jpg",
+        "quote": null
+      }
+    ],
+    "localizacao": {
+      "endereco": null,
+      "lat": -27.1403206,
+      "lon": -48.5979864,
+      "iframe_src": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14202.029696351177!2d-48.5979864!3d-27.1403206!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0:0xae96ab6154d578ae!2sSunview Tower!5e0!3m2!1spt-BR!2sbr!4v1663079772799!5m2!1spt-BR!2sbr"
+    },
+    "disclaimer": null
+  },
+  {
+    "slug": "chateau-excellence",
+    "id_original": 69,
+    "url_original": "https://www.sunprime.com.br/empreendimento/5/69",
+    "status": "Entregues",
+    "render_principal": "https://www.sunprime.com.br/upload/site_servico/69.png",
+    "logo": "https://www.sunprime.com.br/upload/site_servico_logo/69.png",
+    "descricao": "O primeiro empreendimento. Ao mesmo tempo que desafiador, estimulante. Afinal, um grande sonho começava a tomar forma.\n\nA cada tijolo assentado, parede levantada, a cada nova etapa construtiva realizada, um aprendizado. E assim, com dedicação e muito trabalho foi entregue o primeiro empreendimento em Itapema: o Château Excellence. Completo como os mais exigentes padrões.",
+    "hotsite": null,
+    "galeria": [
+      "https://www.sunprime.com.br/upload/site_servico/imagens/739.jpg",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/740.jpg",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/741.jpg",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/749.jpg"
+    ],
+    "foto_adicional": "https://www.sunprime.com.br/upload/site_servico_adicional/69.jpg",
+    "ficha_tecnica_texto": "Pavimentos: 14\nAndares de apartamentos: 09\nAndares de garagens: 03\nApartamentos: 18\nApartamentos por andar: 02\nSalas comerciais: 03\nApartamento tipo:\nTipo 1: três suítes / 138 m2\n\nTipo 2: quatro suítes / 155 m2\n\nÁrea total do empreendimento: 5740.60m²",
+    "arquitetos_e_parceiros": [],
+    "localizacao": {
+      "endereco": null,
+      "lat": -27.137645,
+      "lon": -48.597297,
+      "iframe_src": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14202.369650077175!2d-48.597297!3d-27.137645!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0:0x4398fb9dfc950e17!2sChateau Excellence!5e0!3m2!1spt-BR!2sbr!4v1663075255676!5m2!1spt-BR!2sbr"
+    },
+    "disclaimer": null
+  },
+  {
+    "slug": "plural",
+    "id_original": 80,
+    "url_original": "https://www.sunprime.com.br/empreendimento/6/80",
+    "status": "Em construção",
+    "render_principal": "https://www.sunprime.com.br/upload/site_servico/80.png",
+    "logo": "https://www.sunprime.com.br/upload/site_servico_logo/80.png",
+    "descricao": "Plural é um tributo à versatilidade de formatos, espaços e estilos de vida contemporâneos.\n\nA fusão de arte e arquitetura transforma o Plural em um marco visual, refletindo a ousadia e a criatividade que são marcas registradas da Sunprime Empreendimentos.\n\nPRÉ-LANÇAMENTO - Nos termos da lei no 4.591/64, informamos que o empreendimento somente será vendido e comercializado a partir do Registro da Incorporação no Cartório de Registro de Imóveis, não se responsabilizando a Construtora por anúncios de terceiros em sentido oposto. As Imagens são meramente ilustrativas; as ilustrações contidas neste material possuem apenas caráter de sugestão. Os móveis, assim como alguns materiais de acabamento representados nas ilustrações e plantas, não constituem parte integrante do imóvel. O imóvel será entregue conforme especificado no memorial descritivo, podendo haver modificações do projeto por motivos técnicos sem aviso prévio.",
+    "hotsite": null,
+    "galeria": [
+      "https://www.sunprime.com.br/upload/site_servico/imagens/837.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/838.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/839.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/840.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/841.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/842.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/843.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/844.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/845.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/846.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/847.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/848.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/849.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/850.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/851.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/852.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/853.png"
+    ],
+    "foto_adicional": null,
+    "ficha_tecnica_texto": "Pavimentos: 32\nAndares de apartamentos: 25\nAndares de garagens: 6\nApartamentos: 102\nApartamentos por andar: 3 a 5\nApartamento tipo:\nStudio com 45,84m2 , 48,13m2 e 48,93m2\n\nLoft com 63,48m² e 72,1m²\n\n02 Suítes com 86, 97m2\n\n02 Suítes + Office com 100,56m2\n\n03 Suítes com 143,47m2\n\nLazer no 7o pavimento com 687m2\n\nLazer Rooftop com 361m2\n\nÁrea total do empreendimento: 0.00m²",
+    "arquitetos_e_parceiros": [],
+    "localizacao": {
+      "endereco": null,
+      "lat": null,
+      "lon": null,
+      "iframe_src": null
+    },
+    "disclaimer": null
+  },
+  {
+    "slug": "era",
+    "id_original": 77,
+    "url_original": "https://www.sunprime.com.br/empreendimento/6/77",
+    "status": "Em construção",
+    "render_principal": "https://www.sunprime.com.br/upload/site_servico/77.png",
+    "logo": "https://www.sunprime.com.br/upload/site_servico_logo/77.png",
+    "descricao": "Um ponto fixado na linha do tempo.\n\nUm período que registra o ciclo inaugural.\n\nUm marco para a evolução da humanidade, das artes, da arquitetura e do viver.\n\nQuando o High Tech se choca com a natureza, surge uma nova Era.\n\nACESSE O HOTSITE DO ERA",
+    "hotsite": "http://sunprime.com.br/era",
+    "galeria": [
+      "https://www.sunprime.com.br/upload/site_servico/imagens/794.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/795.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/796.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/797.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/798.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/799.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/800.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/801.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/802.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/803.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/804.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/805.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/806.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/807.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/808.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/809.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/810.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/811.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/812.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/813.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/814.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/815.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/816.png"
+    ],
+    "foto_adicional": "https://www.sunprime.com.br/upload/site_servico_adicional/77.png",
+    "ficha_tecnica_texto": "Pavimentos: 46\nApartamentos: 72\nApartamentos por andar: 2\nApartamento tipo:\n \nTipo 1:\n168,11m² (3 Suítes)\n2 Vagas de Garagem\nBox de Praia Privativo\n\nTipo 2: \n184,79m² (3 Suítes)\n2 Vagas de Garagem\nBox de Praia Privativo\n\nÁrea total do empreendimento: 21000.00m²",
+    "arquitetos_e_parceiros": [
+      {
+        "nome": "Castro e Zago",
+        "descricao": "\"O Era estabelecerá um vínculo de identidade ao seu morador. Quem compreende o design entende que este será seu lugar no mundo\", afirma Rafael Castro, da Castro Arquitetos, que assina o projeto de arquitetura junto com André Zago, da Zago Arquitetura. Os dois escritórios somam diversos prêmios internacionais de arquitetura. \"Viver aqui será uma afirmação de estilo e vanguada\", completa Zago.",
+        "imagem": "https://www.sunprime.com.br/upload/site_arquiteto/10.png",
+        "quote": null
+      }
+    ],
+    "localizacao": {
+      "endereco": null,
+      "lat": -27.10635680122542,
+      "lon": -48.6167517886012,
+      "iframe_src": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3551.5856840122!2d-48.6167517886012!3d-27.10635680122542!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94d8b1f746b2cecb%3A0xdc17eb91f939186e!2sEra%20by%20Sunprime!5e0!3m2!1spt-BR!2sbr!4v1721840209534!5m2!1spt-BR!2sbr"
+    },
+    "disclaimer": "PRÉ-LANÇAMENTO - Nos termos da lei no 4.591/64, informamos que o empreendimento somente será vendido e comercializado a partir do Registro da Incorporação no Cartório de Registro de Imóveis, não se responsabilizando a Construtora por anúncios de terceiros em sentido oposto. As Imagens são meramente ilustrativas; as ilustrações contidas neste material possuem apenas caráter de sugestão. Os móveis, assim como alguns materiais de acabamento representados nas ilustrações e plantas, não constituem parte integrante do imóvel. O imóvel será entregue conforme especificado no memorial descritivo, podendo haver modificações do projeto por motivos técnicos sem aviso prévio. Protocolo de incorporação junto ao ONR (Operador Nacional do Sistema de Registro Eletrônico de Imóveis) sob n° AC002503240."
+  },
+  {
+    "slug": "futura",
+    "id_original": 75,
+    "url_original": "https://www.sunprime.com.br/empreendimento/6/75",
+    "status": "Em construção",
+    "render_principal": "https://www.sunprime.com.br/upload/site_servico/75.png",
+    "logo": "https://www.sunprime.com.br/upload/site_servico_logo/75.png",
+    "descricao": "Futura é a expressão máxima dos formatos contemporâneos de moradia e consumo. Um empreendimento mixed-use que reúne entretenimento, trabalho e lazer em um complexo preparado para o futuro.\n\nUma proposta inovadora e inédita para quer quer experienciar uma nova forma de viver.\n\nFutura, um novo fluxo para a sua vida.\n\nACESSE O HOTSITE DO FUTURA",
+    "hotsite": "http://sunprime.com.br/futura",
+    "galeria": [
+      "https://www.sunprime.com.br/upload/site_servico/imagens/788.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/789.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/790.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/791.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/792.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/793.png"
+    ],
+    "foto_adicional": "https://www.sunprime.com.br/upload/site_servico_adicional/75.png",
+    "ficha_tecnica_texto": "Pavimentos: 54\nApartamentos: 144\nApartamentos por andar: 04\nApartamento tipo:\n\nFutura Residences:\n\n144 unidades residenciais\n\n2600m2 de área de lazer\n\n2 tipologias\n\nTipos 01 e 02 com 181m2 (4 suítes)\n\nTipos 03 e 04 com 137m2 (3 suítes)\n\nFutura Flats by Housi:\n\n94 flats\n\n2500m² de área de lazer\n\nFlats de 42m² até 107m²\n\nÁrea total do empreendimento: 59000.00m²",
+    "arquitetos_e_parceiros": [
+      {
+        "nome": "Chiro Arq",
+        "descricao": "Chiro Arq é um escritório de arquitetura que vem para revolucionar o mercado de empreendimentos imobiliários, com o propósito claro de gerar valor para os empreendimentos que projeta. “Entendemos que precisamos despertar o desejo emocional do cliente final. Valorizar e conectar ser humano, meio ambiente e tecnologia. Tornar o empreendimento um objeto real de desejo, com muito valor agregado em conceito, arquitetura e design.”",
+        "imagem": "https://www.sunprime.com.br/upload/site_arquiteto/7.png",
+        "quote": null
+      },
+      {
+        "nome": "Plantar Ideias",
+        "descricao": "“O desenvolvimento do design do projeto de interiores e paisagismo do Futura é único e leva\nem si uma assinatura da tropicalidade do litoral\ncatarinense combinada com a devida compreensão das\nnecessidades e desafios que o projeto se propõe.\nAcreditamos que ao escolher viver em Itapema, o\nindivíduo busca viver próximo à natureza, ao mesmo\ntexto que suas necessidades pedem por um ambiente\nfuncional, onde seja possível trabalhar, viver e se\nrelacionar com pessoas”.",
+        "imagem": "https://www.sunprime.com.br/upload/site_arquiteto/8.jpg",
+        "quote": null
+      }
+    ],
+    "localizacao": {
+      "endereco": null,
+      "lat": -27.138190098939432,
+      "lon": -48.59903457078125,
+      "iframe_src": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d887.6437746218675!2d-48.59903457078125!3d-27.138190098939432!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0:0x46ec2c22d4e3ca4b!2zMjfCsDA4JzE3LjUiUyA0OMKwMzUnNTQuNiJX!5e0!3m2!1spt-BR!2sbr!4v1668772701667!5m2!1spt-BR!2sbr"
+    },
+    "disclaimer": "PRÉ-LANÇAMENTO - Nos termos da lei no 4.591/64, informamos que o empreendimento somente será vendido e comercializado a partir do Registro da Incorporação no Cartório de Registro de Imóveis, não se responsabilizando a Construtora por anúncios de terceiros em sentido oposto. As Imagens são meramente ilustrativas; as ilustrações contidas neste material possuem apenas caráter de sugestão. Os móveis, assim como alguns materiais de acabamento representados nas ilustrações e plantas, não constituem parte integrante do imóvel. O imóvel será entregue conforme especificado no memorial descritivo, podendo haver modificações do projeto por motivos técnicos sem aviso prévio."
+  },
+  {
+    "slug": "sunhaus-tower",
+    "id_original": 74,
+    "url_original": "https://www.sunprime.com.br/empreendimento/6/74",
+    "status": "Em construção",
+    "render_principal": "https://www.sunprime.com.br/upload/site_servico/74.png",
+    "logo": "https://www.sunprime.com.br/upload/site_servico_logo/74.png",
+    "descricao": "A sensação de estar em sua casa de praia. Um refúgio aconchegante, acolhedor e elegante. A liberdade que só você sente. A brisa que invade transbordando frescor.\n\nSunhaus Tower é expressão urbana com essência praiana. É arquitetura afetiva. É seu entorno com ares de gentileza. A simplicidade charmosa em tons de areia. É o lazer compartilhado, como a vida na praia.",
+    "hotsite": null,
+    "galeria": [
+      "https://www.sunprime.com.br/upload/site_servico/imagens/780.jpg",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/781.jpg",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/782.jpg",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/783.jpg",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/784.jpg",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/785.jpg",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/786.jpg",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/787.jpg"
+    ],
+    "foto_adicional": "https://www.sunprime.com.br/upload/site_servico_adicional/74.jpg",
+    "ficha_tecnica_texto": "Pavimentos: 28\nAndares de apartamentos: 19\nAndares de garagens: 07\nApartamentos: 114\nApartamentos por andar: 06\nSalas comerciais: 04\nApartamento tipo:\nTipo A: duas suítes / 84 m2\n\nTipo B: duas suítes / 87 m2\n\nTipo C: três suítes / 110 m2\n\nÁrea total do empreendimento: 23675.27m²",
+    "arquitetos_e_parceiros": [
+      {
+        "nome": "Chiro Arq.",
+        "descricao": "\"A arquitetura do Sunhaus Tower traz um conceito marcante. A sensação de estar em uma casa de praia é traduzida por um núcleo central, um espaço aberto com ampla circulação de ar e iluminação natural entre as torres. Ao sair do elevador, a sensação é de estar no corredor da própria casa. O paisagismo vertical, com uma cascata verde, reforça a sensação de um lar natural.\" - Chirochi Shimizu Júnior",
+        "imagem": "https://www.sunprime.com.br/upload/site_arquiteto/5.png",
+        "quote": null
+      }
+    ],
+    "localizacao": {
+      "endereco": null,
+      "lat": -27.146504609535043,
+      "lon": -48.58733948433863,
+      "iframe_src": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3550.3109640256926!2d-48.58733948433863!3d-27.146504609535043!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94d8af49ee8fdcf9:0x371262055cac6c36!2sSunhaus Tower!5e0!3m2!1spt-BR!2sbr!4v1663091359959!5m2!1spt-BR!2sbr"
+    },
+    "disclaimer": null
+  },
+  {
+    "slug": "sunstar-ocean-tower",
+    "id_original": 73,
+    "url_original": "https://www.sunprime.com.br/empreendimento/6/73",
+    "status": "Em construção",
+    "render_principal": "https://www.sunprime.com.br/upload/site_servico/73.png",
+    "logo": "https://www.sunprime.com.br/upload/site_servico_logo/73.png",
+    "descricao": "A grande estrela é você e seu novo jeito de viver. Uma ruptura de antigos padrões. É a vida contemporânea em sua máxima expressão.\n\nSofisticação e qualidade de vida em um mesmo ambiente. Um cotidiano de experiências inspiradoras e exclusivas.\n\nArquitetura e humanismo em perfeita harmonia. \n\nAlcance as estrelas com Sunstar Ocean Tower.",
+    "hotsite": null,
+    "galeria": [
+      "https://www.sunprime.com.br/upload/site_servico/imagens/771.jpg",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/772.jpg",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/773.jpg",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/774.jpg",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/775.jpg",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/777.jpg",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/778.jpg",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/779.jpg"
+    ],
+    "foto_adicional": "https://www.sunprime.com.br/upload/site_servico_adicional/73.jpg",
+    "ficha_tecnica_texto": "Pavimentos: 36\nAndares de apartamentos: 24\nAndares de garagens: 06\nApartamentos: 24\nApartamentos por andar: 01\nSalas comerciais: 04\nApartamento tipo:\nTipo 1: quatro suítes / 206 m2\n\nDuplex: quatro suítes / 306 m 2\n\nÁrea total do empreendimento: 9615.58m²",
+    "arquitetos_e_parceiros": [
+      {
+        "nome": "Suite Arquitetos",
+        "descricao": "\"Soluções criativas para o novo viver.\"",
+        "imagem": null,
+        "quote": null
+      },
+      {
+        "nome": "Victor Augusto Bomtempo",
+        "descricao": "“A arquitetura surge como uma provocação aos sentidos mais primários do ser humano. No momento em que acordamos, nas atividades cotidianas, nas interações com nossos familiares e amigos estamos sempre cercados por arquitetura através dos espaços construídos. Sendo assim, o arquiteto tem como objetivo a criação de experiências, de sensações que tragam emoções. Seja pela leveza, pela amplitude ou simplesmente pela beleza. Coloco-me como um arquiteto em sintonia com as provocações. Sou impulsionado a criar espaços que estimulam experiências fortes e despertam sensações únicas. Projetos com o intuito de emocionar.”",
+        "imagem": "https://www.sunprime.com.br/upload/site_arquiteto/1.jpg",
+        "quote": null
+      }
+    ],
+    "localizacao": {
+      "endereco": null,
+      "lat": -27.098096800000004,
+      "lon": -48.6157792,
+      "iframe_src": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3551.8477283485227!2d-48.6157792!3d-27.098096800000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94d8b1d176bb08ed:0xfbf2eaffcf312b5e!2sSunstar Tower!5e0!3m2!1spt-BR!2sbr!4v1663003857443!5m2!1spt-BR!2sbr"
+    },
+    "disclaimer": null
+  },
+  {
+    "slug": "sion",
+    "id_original": 83,
+    "url_original": "https://www.sunprime.com.br/empreendimento/4/83",
+    "status": "Pré-lançamentos",
+    "render_principal": "https://www.sunprime.com.br/upload/site_servico/83.jpg",
+    "logo": "https://www.sunprime.com.br/upload/site_servico_logo/83.png",
+    "descricao": "Sion carrega elementos que poderiam\nsugerir uma direção única.\n\n \n\nMas o que\npropomos é mais amplo e mais íntimo.\nA intenção nunca foi impor uma leitura\nteológica ou religiosa. \n\nA proposta é\nreconhecer que, em diferentes formas e\nintensidades, todos vivemos momentos\nque se tornam sagrados.\n\nEm um local que resulta da união de dois lotes simbólicos: um deles pertenceu, por décadas, à Congregação das Irmãzinhas da Imaculada Conceição, fundada em 1890 por Santa Paulina, em Nova Trento (SC); o outro, à tradicional família Fischer, de Brusque (SC). Antes de ser projeto, o Sion foi lugar de descanso, espiritualidade e silêncio.\n\nEste projeto nasce do desejo de criar lugares onde você possa viver esses momentos. Onde cada morador encontre, à sua maneira, o que dá sentido ao cotidiano.\n\nO primeiro empreendimento com Blessing Room e área Wellness nos pavimentos de lazer.\n\nSion. O Sagrado Habita Aqui.",
+    "hotsite": null,
+    "galeria": [
+      "https://www.sunprime.com.br/upload/site_servico/imagens/858.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/859.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/860.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/861.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/862.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/863.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/865.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/866.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/867.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/868.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/869.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/871.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/872.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/873.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/875.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/876.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/877.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/878.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/879.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/880.png"
+    ],
+    "foto_adicional": null,
+    "ficha_tecnica_texto": "Pavimentos: 29\nAndares de apartamentos: 23\nAndares de garagens: 4\nApartamentos: 86\nApartamentos por andar: 4\nSalas comerciais: 4\nApartamento tipo:\n\n80 apartamentos tipos com 4 suítes e 4 vagas de garagem\n\nTipo 1: 235,25m² privativos\n\nTipo 2: 235,25m² privativos\n\nTipo 3: 186,39m² privativos\n\nTipo 4: 195,93m² privativos\n\n6 exclusivas Penthouses com piscina privativa, espera para ofurô, com 5 suítes e 5 vagas de garagem\n\nUn. 2601: 421,64m² privativos\n\nUn. 2602: 431,18m² privativos\n\nUn. 2701: 361,02m² privativos\n\nUn. 2702: 370,55m² privativos\n\nUn. 2801: 290,66m² privativos\n\nUn. 2802: 300,19m² privativos\n\nÁrea total do empreendimento: 33742.24m²",
+    "arquitetos_e_parceiros": [
+      {
+        "nome": "Studio Guilherme Garcia",
+        "descricao": null,
+        "imagem": "https://www.sunprime.com.br/upload/site_arquiteto/14.png",
+        "quote": null
+      },
+      {
+        "nome": "Estúdio Daniel Nunes Paisagismo",
+        "descricao": null,
+        "imagem": "https://www.sunprime.com.br/upload/site_arquiteto/17.png",
+        "quote": null
+      }
+    ],
+    "localizacao": {
+      "endereco": null,
+      "lat": null,
+      "lon": null,
+      "iframe_src": null
+    },
+    "disclaimer": "PRÉ-LANÇAMENTO - Nos termos da lei no 4.591/64, informamos que o empreendimento somente será vendido e comercializado a partir do Registro da Incorporação no Cartório de Registro de Imóveis, não se responsabilizando a Construtora por anúncios de terceiros em sentido oposto. As Imagens são meramente ilustrativas; as ilustrações contidas neste material possuem apenas caráter de sugestão. Os móveis, assim como alguns materiais de acabamento representados nas ilustrações e plantas, não constituem parte integrante do imóvel. O imóvel será entregue conforme especificado no memorial descritivo, podendo haver modificações do projeto por motivos técnicos sem aviso prévio."
+  },
+  {
+    "slug": "organica",
+    "id_original": 82,
+    "url_original": "https://www.sunprime.com.br/empreendimento/4/82",
+    "status": "Pré-lançamentos",
+    "render_principal": "https://www.sunprime.com.br/upload/site_servico/82.jpg",
+    "logo": "https://www.sunprime.com.br/upload/site_servico_logo/82.png",
+    "descricao": "A EXPRESSÃO DO MODERNISMO\n\nOrgânica reverencia o design brasileiro em sua forma mais autêntica. A fusão entre a arquitetura modernista e a natureza nativa revela a brasilidade em cada traço.",
+    "hotsite": null,
+    "galeria": [
+      "https://www.sunprime.com.br/upload/site_servico/imagens/821.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/822.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/823.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/824.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/825.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/826.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/827.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/828.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/829.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/830.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/831.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/832.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/833.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/834.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/835.png",
+      "https://www.sunprime.com.br/upload/site_servico/imagens/836.png"
+    ],
+    "foto_adicional": "https://www.sunprime.com.br/upload/site_servico_adicional/82.jpg",
+    "ficha_tecnica_texto": "Pavimentos: 50\nAndares de apartamentos: 41\nAndares de garagens: 5\nApartamentos: 82\nApartamentos por andar: 2\nApartamento tipo:\n\n80 tipos - 4 suítes\n\nTipo 1: 210,28 m²\n\nTipo 2: 210,95 m²\n\n2 duplex - 4 suítes\n\nTipo 1: 293,88 m²\n\nTipo 2: 291,76 m²\n\n3 vagas de garagem\n\nbox de praia\n\nÁrea total do empreendimento: 32000.00m²",
+    "arquitetos_e_parceiros": [
+      {
+        "nome": "Leonardo Zanatta",
+        "descricao": "Leonardo Zanatta, incluído na prestigiada lista Forbes Under 30 em 2021 como um dos arquitetos mais promissores de sua geração, acumula mais de 20 premiações e menções nacionais e internacionais. Entre seus reconhecimentos notáveis, destacam-se cinco vitórias no Prêmio Saint-Gobain de Arquitetura, voltado para projetos de sustentabilidade.",
+        "imagem": "https://www.sunprime.com.br/upload/site_arquiteto/13.png",
+        "quote": null
+      },
+      {
+        "nome": "Escritório Burle Marx",
+        "descricao": "Fundado por Roberto Burle Marx em 1955, o Escritório de Paisagismo Burle Marx é um renomado estúdio de Paisagismo que cria e desenvolve projetos com assinatura exclusiva, através de soluções artísticas e personalizadas para cada espaço, sempre pensando na harmonia e beleza através de formas orgânicas e geométricas. Atualmente, o Escritório é coordenado pela terceira geração de arquitetos paisagistas Júlio Ono e Gustavo Leivas que possuem ampla experiência nacional e internacional.",
+        "imagem": "https://www.sunprime.com.br/upload/site_arquiteto/11.jpg",
+        "quote": null
+      }
+    ],
+    "localizacao": {
+      "endereco": null,
+      "lat": null,
+      "lon": null,
+      "iframe_src": null
+    },
+    "disclaimer": "PRÉ-LANÇAMENTO - Nos termos da lei no 4.591/64, informamos que o empreendimento somente será vendido e comercializado a partir do Registro da Incorporação no Cartório de Registro de Imóveis, não se responsabilizando a Construtora por anúncios de terceiros em sentido oposto. As Imagens são meramente ilustrativas; as ilustrações contidas neste material possuem apenas caráter de sugestão. Os móveis, assim como alguns materiais de acabamento representados nas ilustrações e plantas, não constituem parte integrante do imóvel. O imóvel será entregue conforme especificado no memorial descritivo, podendo haver modificações do projeto por motivos técnicos sem aviso prévio."
+  }
+]

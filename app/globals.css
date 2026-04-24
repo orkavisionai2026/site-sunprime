@@ -1,0 +1,166 @@
+@import "tailwindcss";
+
+/**
+ * Sunprime — Design Tokens "Vertical Cinema"
+ * Paleta: Ink (preto/noite cinematográfica) + Gold (champagne) + Ocean (Itapema).
+ * Tipografia: Fraunces (display serif) + Inter (sans body) + JetBrains Mono.
+ */
+@theme {
+  /* Ink — base escura da noite/skyline */
+  --color-ink-50: #F5F5F7;
+  --color-ink-100: #E4E4EA;
+  --color-ink-200: #B8B8C2;
+  --color-ink-300: #7A7A88;
+  --color-ink-400: #4F4F5C;
+  --color-ink-500: #3D3D47;
+  --color-ink-600: #2C2C36;
+  --color-ink-700: #1F1F27;
+  --color-ink-800: #14141A;
+  --color-ink-900: #0A0A0B;
+  --color-ink-950: #050508;
+
+  /* Gold — champagne, nunca amarelo-kitsch */
+  --color-gold-50: #FBF6EC;
+  --color-gold-100: #F3E7D0;
+  --color-gold-200: #E8D4B5;
+  --color-gold-300: #D8BC94;
+  --color-gold-400: #CDAE82;
+  --color-gold-500: #C9A87C;
+  --color-gold-600: #A6865C;
+  --color-gold-700: #7E6543;
+  --color-gold-800: #554230;
+  --color-gold-900: #2E231A;
+
+  /* Ocean — referência ao mar de Itapema/Meia Praia */
+  --color-ocean-50: #EAF5F7;
+  --color-ocean-100: #C6E8ED;
+  --color-ocean-200: #9AD0D9;
+  --color-ocean-300: #7DB8C4;
+  --color-ocean-400: #4FA2B2;
+  --color-ocean-500: #2B8295;
+  --color-ocean-600: #1E687D;
+  --color-ocean-700: #155264;
+  --color-ocean-800: #0D3F4A;
+  --color-ocean-900: #0A2B33;
+
+  /* Paper — off-white quente para modo claro / contraste */
+  --color-paper-50: #FAF7F1;
+  --color-paper-100: #F5F1EA;
+  --color-paper-200: #E8E1D4;
+  --color-paper-300: #D4C9B5;
+
+  /* Fontes (expostas por next/font como CSS vars) */
+  --font-serif: var(--font-fraunces);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains);
+
+  /* Curvas e durações "cinematográficas" */
+  --ease-cinema: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-drape: cubic-bezier(0.65, 0, 0.35, 1);
+  --duration-fast: 200ms;
+  --duration-base: 420ms;
+  --duration-slow: 900ms;
+
+  /* Escala tipográfica display (rítmica, não escalonamento linear) */
+  --text-display-sm: 2.75rem;
+  --text-display: 4.25rem;
+  --text-display-lg: 6.5rem;
+  --text-display-xl: 9rem;
+}
+
+:root {
+  color-scheme: dark;
+  --background: var(--color-ink-950);
+  --foreground: var(--color-paper-100);
+}
+
+html,
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Lenis smooth scroll */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* Vídeos de fundo — matar qualquer UI nativa de play do browser.
+   Pseudo-elements são o chrome do Safari/Chrome que aparece em cima do poster
+   antes do autoplay disparar (e ficam lá se o autoplay for bloqueado). */
+video[data-bg] {
+  -webkit-appearance: none;
+}
+video[data-bg]::-webkit-media-controls,
+video[data-bg]::-webkit-media-controls-enclosure,
+video[data-bg]::-webkit-media-controls-panel,
+video[data-bg]::-webkit-media-controls-overlay-enclosure,
+video[data-bg]::-webkit-media-controls-overlay-play-button,
+video[data-bg]::-webkit-media-controls-start-playback-button,
+video[data-bg]::-webkit-media-controls-play-button,
+video[data-bg]::-webkit-media-text-track-container {
+  display: none !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  -webkit-appearance: none !important;
+}
+
+/* Seleção — acento dourado sobre ink */
+::selection {
+  background: var(--color-gold-500);
+  color: var(--color-ink-950);
+}
+
+/* Custom cursor — esconde nativo em desktop quando ativo */
+html.has-custom-cursor,
+html.has-custom-cursor body,
+html.has-custom-cursor *:not(input):not(textarea) {
+  cursor: none !important;
+}
+
+/* Scrollbar sutil */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-ink-900);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-ink-700);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold-700);
+}
+
+/* Utilitários na camada components — utilities do Tailwind ganham no override */
+@layer components {
+  .display {
+    font-family: var(--font-serif);
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    line-height: 0.95;
+  }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-gold-400);
+  }
+}
