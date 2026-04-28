@@ -49,8 +49,8 @@ export default function HomePage() {
                 <Link
                   href="/empreendimentos"
                   className="
-                    eyebrow rounded-full bg-gold-500 px-6 py-3 text-ink-950
-                    transition-colors hover:bg-gold-400
+                    eyebrow glow-box rounded-full bg-gold-500 px-6 py-3 text-ink-950
+                    transition-all hover:bg-gold-400
                   "
                 >
                   Ver empreendimentos
@@ -161,8 +161,8 @@ export default function HomePage() {
               <Link
                 href="/contato"
                 className="
-                  eyebrow inline-block rounded-full bg-gold-500 px-6 py-3 text-ink-950
-                  transition-colors hover:bg-gold-400
+                  eyebrow glow-box inline-block rounded-full bg-gold-500 px-6 py-3 text-ink-950
+                  transition-all hover:bg-gold-400
                 "
               >
                 Falar com a Sunprime

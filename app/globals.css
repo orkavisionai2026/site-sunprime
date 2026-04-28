@@ -2,50 +2,52 @@
 @import url('https://api.fontshare.com/v2/css?f[]=satoshi@400,500&display=swap');
 
 /**
- * Sunprime — Design Tokens "Vertical Cinema"
- * Paleta: Ink (preto/noite cinematográfica) + Gold (champagne) + Ocean (Itapema).
- * Tipografia editorial:
- *   - Times New Roman (serif default — system font, sem download)
- *   - Satoshi Regular (sans body — Fontshare)
- *   - Instrument Serif Italic (italic accent — Google Fonts via next/font)
+ * Sunprime — Design System (port from mindhyve.ai)
+ * Dark + neon mint/cyan accent. Tipografia editorial preservada.
+ *
+ * Os tokens "gold-*" agora carregam valores cyan/mint (do mindhyve) — todas
+ * as classes existentes do tipo `text-gold-400`, `bg-gold-500`,
+ * `border-gold-500/60` renderizam o novo accent automaticamente.
  */
 @theme {
-  /* Ink — base escura da noite/skyline */
-  --color-ink-50: #F5F5F7;
-  --color-ink-100: #E4E4EA;
-  --color-ink-200: #B8B8C2;
-  --color-ink-300: #7A7A88;
-  --color-ink-400: #4F4F5C;
-  --color-ink-500: #3D3D47;
-  --color-ink-600: #2C2C36;
-  --color-ink-700: #1F1F27;
-  --color-ink-800: #14141A;
-  --color-ink-900: #0A0A0B;
-  --color-ink-950: #050508;
+  /* Ink — agora puro preto na base, slight green-tint nos intermediários
+     pra harmonizar com o accent cyan. */
+  --color-ink-50: #ECEFEE;
+  --color-ink-100: #D6DBDA;
+  --color-ink-200: #A8B0AE;
+  --color-ink-300: #6E7775;
+  --color-ink-400: #444D4B;
+  --color-ink-500: #2E3735;
+  --color-ink-600: #1F2625;
+  --color-ink-700: #141919;
+  --color-ink-800: #0B0F0E;
+  --color-ink-900: #050707;
+  --color-ink-950: #000000;
 
-  /* Gold — champagne, nunca amarelo-kitsch */
-  --color-gold-50: #FBF6EC;
-  --color-gold-100: #F3E7D0;
-  --color-gold-200: #E8D4B5;
-  --color-gold-300: #D8BC94;
-  --color-gold-400: #CDAE82;
-  --color-gold-500: #C9A87C;
-  --color-gold-600: #A6865C;
-  --color-gold-700: #7E6543;
-  --color-gold-800: #554230;
-  --color-gold-900: #2E231A;
+  /* "Gold" — agora Mint/Cyan neon (nome mantido pra compat das classes).
+     Primário: #2dffc4 (mindhyve). Variantes derivadas. */
+  --color-gold-50: #ECFFFB;
+  --color-gold-100: #C9FFF1;
+  --color-gold-200: #99FFE6;
+  --color-gold-300: #5fffdc;
+  --color-gold-400: #38F2CB;
+  --color-gold-500: #2dffc4;
+  --color-gold-600: #00C896;
+  --color-gold-700: #00956E;
+  --color-gold-800: #006149;
+  --color-gold-900: #002E22;
 
-  /* Ocean — referência ao mar de Itapema/Meia Praia */
-  --color-ocean-50: #EAF5F7;
-  --color-ocean-100: #C6E8ED;
-  --color-ocean-200: #9AD0D9;
-  --color-ocean-300: #7DB8C4;
-  --color-ocean-400: #4FA2B2;
-  --color-ocean-500: #2B8295;
-  --color-ocean-600: #1E687D;
-  --color-ocean-700: #155264;
-  --color-ocean-800: #0D3F4A;
-  --color-ocean-900: #0A2B33;
+  /* Ocean — escala cyan secundária (light-blue para complementar mint) */
+  --color-ocean-50: #ECFCFF;
+  --color-ocean-100: #C9F5FF;
+  --color-ocean-200: #99EAFF;
+  --color-ocean-300: #58EFFE;
+  --color-ocean-400: #25D5F0;
+  --color-ocean-500: #0098B0;
+  --color-ocean-600: #007E92;
+  --color-ocean-700: #00586A;
+  --color-ocean-800: #003844;
+  --color-ocean-900: #001A21;
 
   /* Paper — off-white quente para modo claro / contraste */
   --color-paper-50: #FAF7F1;
@@ -162,8 +164,7 @@ html.has-custom-cursor *:not(input):not(textarea) {
     line-height: 0.95;
   }
 
-  /* Italic em qualquer lugar do site → Instrument Serif Italic.
-     Captura: classe Tailwind .italic, tags semânticas <em>/<i>, e <cite>. */
+  /* Italic em qualquer lugar do site → Instrument Serif Italic */
   :where(.italic, em, i, cite) {
     font-family: var(--font-italic);
     font-style: italic;
@@ -177,4 +178,29 @@ html.has-custom-cursor *:not(input):not(textarea) {
     text-transform: uppercase;
     color: var(--color-gold-400);
   }
+
+  /* Glow neon explícito — use seletivamente: .glow */
+  .glow {
+    text-shadow:
+      0 0 16px rgba(45, 255, 196, 0.35),
+      0 0 48px rgba(45, 255, 196, 0.18);
+  }
+
+  .glow-box {
+    box-shadow:
+      0 0 24px -4px rgba(45, 255, 196, 0.4),
+      0 0 0 1px rgba(45, 255, 196, 0.25) inset;
+  }
+
+  /* Auto-glow em accents italic+mint — captura "porque você é.",
+     "uma história", "em movimento", "a Sunprime", etc. sem precisar
+     adicionar classe extra em cada lugar. */
+  .italic.text-gold-300,
+  .italic.text-gold-400,
+  .italic.text-gold-500 {
+    text-shadow:
+      0 0 24px rgba(45, 255, 196, 0.45),
+      0 0 64px rgba(45, 255, 196, 0.22);
+  }
+
 }
