@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { fraunces, inter, jetbrainsMono } from '@/lib/fonts';
+import { instrumentSerif } from '@/lib/fonts';
 import { Providers } from './providers';
 import './globals.css';
 
@@ -28,10 +28,12 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html
-      lang="pt-BR"
-      className={`${fraunces.variable} ${inter.variable} ${jetbrainsMono.variable}`}
-    >
+    <html lang="pt-BR" className={instrumentSerif.variable}>
+      <head>
+        {/* Preconnect ao Fontshare pra acelerar o load do Satoshi */}
+        <link rel="preconnect" href="https://api.fontshare.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://cdn.fontshare.com" crossOrigin="anonymous" />
+      </head>
       <body>
         <Providers>{children}</Providers>
       </body>

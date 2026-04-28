@@ -1,9 +1,13 @@
 @import "tailwindcss";
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@400,500&display=swap');
 
 /**
  * Sunprime — Design Tokens "Vertical Cinema"
  * Paleta: Ink (preto/noite cinematográfica) + Gold (champagne) + Ocean (Itapema).
- * Tipografia: Fraunces (display serif) + Inter (sans body) + JetBrains Mono.
+ * Tipografia editorial:
+ *   - Times New Roman (serif default — system font, sem download)
+ *   - Satoshi Regular (sans body — Fontshare)
+ *   - Instrument Serif Italic (italic accent — Google Fonts via next/font)
  */
 @theme {
   /* Ink — base escura da noite/skyline */
@@ -49,10 +53,12 @@
   --color-paper-200: #E8E1D4;
   --color-paper-300: #D4C9B5;
 
-  /* Fontes (expostas por next/font como CSS vars) */
-  --font-serif: var(--font-fraunces);
-  --font-sans: var(--font-inter);
-  --font-mono: var(--font-jetbrains);
+  /* Fontes — set editorial */
+  --font-sans: 'Satoshi', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --font-serif: 'Times New Roman', Times, Georgia, serif;
+  --font-italic: var(--font-instrument-serif), 'Times New Roman', Times, serif;
+  /* mono mantido pra compat das classes font-mono — fallback system mono stack */
+  --font-mono: ui-monospace, 'SF Mono', Menlo, Monaco, Consolas, monospace;
 
   /* Curvas e durações "cinematográficas" */
   --ease-cinema: cubic-bezier(0.22, 1, 0.36, 1);
@@ -151,13 +157,21 @@ html.has-custom-cursor *:not(input):not(textarea) {
 @layer components {
   .display {
     font-family: var(--font-serif);
-    font-weight: 300;
+    font-weight: 400;
     letter-spacing: -0.02em;
     line-height: 0.95;
   }
 
+  /* Italic em qualquer lugar do site → Instrument Serif Italic.
+     Captura: classe Tailwind .italic, tags semânticas <em>/<i>, e <cite>. */
+  :where(.italic, em, i, cite) {
+    font-family: var(--font-italic);
+    font-style: italic;
+  }
+
   .eyebrow {
-    font-family: var(--font-mono);
+    font-family: var(--font-sans);
+    font-weight: 500;
     font-size: 0.75rem;
     letter-spacing: 0.22em;
     text-transform: uppercase;

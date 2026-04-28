@@ -1,22 +1,15 @@
-import { Fraunces, Inter, JetBrains_Mono } from 'next/font/google';
+import { Instrument_Serif } from 'next/font/google';
 
-export const fraunces = Fraunces({
+/**
+ * Tipografia Sunprime — set editorial:
+ *  - Times New Roman: serif default (system font, sem download)
+ *  - Satoshi Regular: sans body (carregado via Fontshare em globals.css/layout)
+ *  - Instrument Serif Italic: italic accent (Google Fonts via next/font)
+ */
+export const instrumentSerif = Instrument_Serif({
   subsets: ['latin', 'latin-ext'],
-  variable: '--font-fraunces',
+  variable: '--font-instrument-serif',
   display: 'swap',
-  weight: ['300', '400', '500', '600'],
-});
-
-export const inter = Inter({
-  subsets: ['latin', 'latin-ext'],
-  variable: '--font-inter',
-  display: 'swap',
-  weight: ['300', '400', '500', '600', '700'],
-});
-
-export const jetbrainsMono = JetBrains_Mono({
-  subsets: ['latin'],
-  variable: '--font-jetbrains',
-  display: 'swap',
-  weight: ['400', '500'],
+  weight: '400',
+  style: 'italic',
 });
