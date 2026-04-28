@@ -20,8 +20,8 @@ export default function HomePage() {
           animatedAvif="/hero/hero.avif"
           animatedWebp="/hero/hero.webp"
           poster="/hero/hero-poster.jpg"
-          alt="Vista aérea de Itapema — Sunprime Empreendimentos"
-          className="absolute inset-0 h-full w-full object-cover"
+          alt="Vista aérea de Meia Praia, Itapema — Sunprime Empreendimentos"
+          className="absolute inset-0 h-full w-full object-cover object-[30%_center] md:object-center"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-ink-950/60 via-ink-950/30 to-ink-950" />
 

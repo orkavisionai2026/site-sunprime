@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sunprime Redesign</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: #0f172a;
+        color: #e2e8f0;
+        display: flex;
+        min-height: 100vh;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
+      .container {
+        max-width: 760px;
+        width: 100%;
+        background: rgba(15, 23, 42, 0.96);
+        border: 1px solid rgba(148, 163, 184, 0.18);
+        border-radius: 24px;
+        box-shadow: 0 24px 80px rgba(15, 23, 42, 0.55);
+        padding: 36px;
+      }
+      h1 {
+        margin-top: 0;
+        font-size: clamp(2rem, 4vw, 3rem);
+        color: #f8fafc;
+      }
+      p {
+        line-height: 1.7;
+        color: #cbd5e1;
+      }
+      ul {
+        padding-left: 1.2rem;
+        color: #cbd5e1;
+      }
+      a {
+        color: #fbbf24;
+        text-decoration: none;
+      }
+      .note {
+        margin-top: 24px;
+        padding: 18px;
+        background: rgba(148, 163, 184, 0.08);
+        border-left: 4px solid #fbbf24;
+      }
+      .footer {
+        margin-top: 32px;
+        font-size: 0.95rem;
+        color: #94a3b8;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Sunprime Redesign</h1>
+      <p>Este projeto é um site Next.js para o estúdio Sunprime, com foco em empreendimentos imobiliários de alto padrão e experiência visual em Itapema, SC.</p>
+      <p>O aplicativo usa:</p>
+      <ul>
+        <li>Next.js 14</li>
+        <li>React 18</li>
+        <li>Tailwind CSS</li>
+        <li>Sanity para CMS</li>
+        <li>Three.js e framer-motion para animações</li>
+      </ul>
+      <p>Principais rotas:</p>
+      <ul>
+        <li><strong>/</strong> - página principal</li>
+        <li><strong>/empreendimentos</strong> - lista de projetos</li>
+        <li><strong>/sobre</strong> - manifesto e informações da empresa</li>
+        <li><strong>/contato</strong> - formulário ou informações de contato</li>
+      </ul>
+      <div class="note">
+        <p><strong>Como rodar localmente:</strong></p>
+        <ul>
+          <li>Instalar dependências: <code>npm install</code></li>
+          <li>Executar em desenvolvimento: <code>npm run dev</code></li>
+          <li>Build de produção: <code>npm run build</code></li>
+          <li>Iniciar produção: <code>npm start</code></li>
+        </ul>
+      </div>
+      <div class="footer">
+        <p>Arquivo gerado automaticamente para facilitar a visualização do projeto no diretório raiz.</p>
+      </div>
+    </div>
+  </body>
+</html>
