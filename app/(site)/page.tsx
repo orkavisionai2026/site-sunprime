@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { CinematicSection } from '@/components/cinematic-section';
 import { EmpreendimentoCard } from '@/components/empreendimento-card';
@@ -17,69 +18,97 @@ export default function HomePage() {
       {/* ——— HERO ————————————————————————————————————————————————————————— */}
       <section className="relative h-screen min-h-[720px] w-full overflow-hidden">
         <VideoHero
-          animatedAvif="/hero/hero.avif"
-          animatedWebp="/hero/hero.webp"
+          video="/hero/hero.mp4"
           poster="/hero/hero-poster.jpg"
           alt="Vista aérea de Meia Praia, Itapema — Sunprime Empreendimentos"
           className="absolute inset-0 h-full w-full object-cover object-[30%_center] md:object-center"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-ink-950/60 via-ink-950/30 to-ink-950" />
 
-        <div className="relative z-10 mx-auto flex h-full max-w-7xl flex-col justify-between px-6 pt-28 pb-10 md:px-10 md:pt-40 md:pb-16">
+        {/* Logo centralizada no hero — só no desktop */}
+        <div className="absolute inset-0 z-10 hidden items-center justify-center md:flex">
+          <Image
+            src="/brand/logo.png"
+            alt="Sunprime"
+            width={339}
+            height={48}
+            priority
+            className="h-10 w-auto opacity-90 md:h-14"
+          />
+        </div>
+
+        <div className="relative z-10 flex h-full flex-col justify-between px-8 pt-28 pb-10 md:px-16 md:pt-40 md:pb-16 lg:px-24">
           <Reveal>
             <span className="eyebrow">Sunprime · Itapema · desde {institucional.anoFundacao}</span>
           </Reveal>
 
-          <div className="max-w-5xl">
-            <h1 className="display text-5xl leading-[1.02] text-paper-50 sm:text-7xl lg:text-display-lg xl:text-display-xl">
-              <SunriseText delay={0.4}>Diferente</SunriseText>
-              <br />
-              <SunriseText delay={1.1} className="italic text-gold-400">
-                porque você é.
-              </SunriseText>
-            </h1>
-            <Reveal delay={0.3}>
-              <p className="mt-6 max-w-xl text-base text-ink-200 sm:text-lg md:mt-8 md:text-xl">
-                Projetamos espaços com design inspirador. Uma explosão de formas que
-                transforma o skyline das cidades.
-              </p>
-            </Reveal>
-            <Reveal delay={0.5}>
-              <div className="mt-10 flex flex-wrap gap-4">
-                <Link
-                  href="/empreendimentos"
-                  className="
-                    eyebrow glow-box rounded-full bg-gold-500 px-6 py-3 text-ink-950
-                    transition-all hover:bg-gold-400
-                  "
-                >
-                  Ver empreendimentos
-                </Link>
-                <Link
-                  href="/sobre"
-                  className="
-                    eyebrow rounded-full border border-ink-500 px-6 py-3 text-paper-100
-                    transition-colors hover:border-gold-500 hover:text-gold-300
-                  "
-                >
-                  Nosso manifesto
-                </Link>
+          <div className="flex flex-col gap-8 md:gap-12">
+            <div className="max-w-3xl">
+              <h1 className="display text-5xl leading-[1.02] text-paper-50 sm:text-7xl lg:text-display-lg xl:text-display-xl">
+                <SunriseText delay={0.4}>Diferente</SunriseText>
+                <br />
+                <SunriseText delay={1.1} className="italic text-gold-400">
+                  porque você é.
+                </SunriseText>
+              </h1>
+              <Reveal delay={0.5}>
+                <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
+                  <Link
+                    href="/empreendimentos"
+                    className="
+                      eyebrow glow-box rounded-full bg-gold-500 px-6 py-3 text-center text-ink-950
+                      transition-all hover:bg-gold-400
+                    "
+                  >
+                    Ver empreendimentos
+                  </Link>
+                  <Link
+                    href="/sobre"
+                    className="
+                      eyebrow rounded-full border border-paper-200/60 px-6 py-3 text-center text-paper-100
+                      transition-colors hover:border-paper-100 hover:text-white
+                    "
+                  >
+                    Nosso manifesto
+                  </Link>
+                </div>
+              </Reveal>
+            </div>
+
+            <Reveal delay={0.6}>
+              <div className="hidden items-center justify-between md:flex">
+                <p className="font-mono text-xs uppercase tracking-[0.3em] text-ink-300">
+                  ↓ role
+                </p>
+                <p className="max-w-xs text-xs text-ink-400">
+                  Itapema, SC · Meia Praia
+                </p>
               </div>
             </Reveal>
           </div>
-
-          <Reveal delay={0.6}>
-            <div className="hidden items-end justify-between md:flex">
-              <p className="font-mono text-xs uppercase tracking-[0.3em] text-ink-300">
-                ↓ role
-              </p>
-              <p className="max-w-xs text-xs text-ink-400">
-                Itapema, SC · Meia Praia
-              </p>
-            </div>
-          </Reveal>
         </div>
       </section>
+
+      {/* ——— STATEMENT ——————————————————————————————————————————————————— */}
+      <CinematicSection offset={100} fromScale={0.95} className="overflow-hidden bg-ink-950 px-8 py-24 md:px-16 md:py-40 lg:px-24">
+        <div className="mx-auto max-w-7xl">
+          <Reveal y={70}>
+            <p className="display text-4xl leading-[1.05] text-paper-50 sm:text-5xl md:text-6xl lg:text-7xl">
+              Projetamos espaços
+            </p>
+          </Reveal>
+          <Reveal delay={0.18} y={70}>
+            <p className="display text-4xl leading-[1.05] text-paper-50 sm:text-5xl md:text-6xl lg:text-7xl">
+              com design inspirador.
+            </p>
+          </Reveal>
+          <Reveal delay={0.36} y={70}>
+            <p className="display mt-1 text-4xl leading-[1.05] italic text-gold-400 sm:text-5xl md:text-6xl lg:text-7xl">
+              Uma explosão de formas.
+            </p>
+          </Reveal>
+        </div>
+      </CinematicSection>
 
       {/* ——— DESTAQUES ——————————————————————————————————————————————————— */}
       <CinematicSection className="relative bg-ink-950 px-6 py-28 md:px-10 md:py-40">

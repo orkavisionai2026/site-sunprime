@@ -55,6 +55,32 @@ export default function EmpreendimentoPage({ params }: { params: Params }) {
         </div>
       </section>
 
+      {/* ——— GALERIA ——————————————————————————————————————————————————————— */}
+      {emp.galeria.length > 0 && (
+        <CinematicSection className="px-6 py-20 md:px-10 md:py-28">
+          <div className="mx-auto max-w-7xl">
+            <Reveal>
+              <span className="eyebrow">Galeria · {emp.galeria.length} imagens</span>
+            </Reveal>
+            <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+              {emp.galeria.map((img, i) => (
+                <Reveal key={i} delay={(i % 3) * 0.05}>
+                  <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-ink-800">
+                    <Image
+                      src={img.src}
+                      alt={img.alt ?? `${emp.nome} · imagem ${i + 1}`}
+                      fill
+                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                      className="object-cover transition-transform duration-700 ease-out hover:scale-[1.03]"
+                    />
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </CinematicSection>
+      )}
+
       {/* ——— DESCRIÇÃO + FICHA ———————————————————————————————————————————— */}
       <CinematicSection className="px-6 py-24 md:px-10 md:py-32">
         <div className="mx-auto grid max-w-7xl gap-16 md:grid-cols-[1.4fr_1fr]">
@@ -98,32 +124,6 @@ export default function EmpreendimentoPage({ params }: { params: Params }) {
           )}
         </div>
       </CinematicSection>
-
-      {/* ——— GALERIA ——————————————————————————————————————————————————————— */}
-      {emp.galeria.length > 0 && (
-        <CinematicSection className="px-6 py-20 md:px-10 md:py-28">
-          <div className="mx-auto max-w-7xl">
-            <Reveal>
-              <span className="eyebrow">Galeria · {emp.galeria.length} imagens</span>
-            </Reveal>
-            <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-              {emp.galeria.map((img, i) => (
-                <Reveal key={i} delay={(i % 3) * 0.05}>
-                  <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-ink-800">
-                    <Image
-                      src={img.src}
-                      alt={img.alt ?? `${emp.nome} · imagem ${i + 1}`}
-                      fill
-                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                      className="object-cover transition-transform duration-700 ease-out hover:scale-[1.03]"
-                    />
-                  </div>
-                </Reveal>
-              ))}
-            </div>
-          </div>
-        </CinematicSection>
-      )}
 
       {/* ——— ARQUITETOS ——————————————————————————————————————————————————— */}
       {emp.arquitetos.length > 0 && (
