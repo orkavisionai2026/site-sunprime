@@ -109,6 +109,7 @@ html.lenis body {
    antes do autoplay disparar (e ficam lá se o autoplay for bloqueado). */
 video[data-bg] {
   -webkit-appearance: none;
+  pointer-events: none;
 }
 video[data-bg]::-webkit-media-controls,
 video[data-bg]::-webkit-media-controls-enclosure,
@@ -117,11 +118,19 @@ video[data-bg]::-webkit-media-controls-overlay-enclosure,
 video[data-bg]::-webkit-media-controls-overlay-play-button,
 video[data-bg]::-webkit-media-controls-start-playback-button,
 video[data-bg]::-webkit-media-controls-play-button,
-video[data-bg]::-webkit-media-text-track-container {
+video[data-bg]::-webkit-media-controls-fullscreen-button,
+video[data-bg]::-webkit-media-controls-mute-button,
+video[data-bg]::-webkit-media-controls-timeline,
+video[data-bg]::-webkit-media-controls-current-time-display,
+video[data-bg]::-webkit-media-controls-time-remaining-display,
+video[data-bg]::-webkit-media-text-track-container,
+video[data-bg]::-internal-media-controls-overlay-cast-button {
   display: none !important;
   opacity: 0 !important;
+  visibility: hidden !important;
   pointer-events: none !important;
   -webkit-appearance: none !important;
+  appearance: none !important;
 }
 
 /* Seleção — branco sobre preto */

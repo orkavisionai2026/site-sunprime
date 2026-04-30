@@ -6,9 +6,9 @@ export function Footer({ config }: { config: ConfiguracaoSite }) {
 
   return (
     <footer className="relative border-t border-ink-800/80 bg-ink-950 text-ink-200">
-      <div className="mx-auto grid max-w-7xl gap-12 px-6 py-20 md:grid-cols-[1.2fr_1fr_1fr] md:px-10">
+      <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 sm:gap-12 sm:py-20 md:grid-cols-[1.2fr_1fr_1fr] md:px-10">
         <div>
-          <p className="display text-4xl leading-[0.95] text-paper-100 md:text-5xl">
+          <p className="display text-3xl leading-[0.95] text-paper-100 sm:text-4xl md:text-5xl">
             {config.tagline}
           </p>
           <p className="mt-6 max-w-sm text-sm text-ink-300">

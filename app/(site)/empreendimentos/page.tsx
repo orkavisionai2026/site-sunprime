@@ -20,11 +20,11 @@ export default function EmpreendimentosPage() {
 
   return (
     <div className="bg-ink-950">
-      <CinematicSection className="relative px-6 pt-40 pb-16 md:px-10">
+      <CinematicSection className="relative px-6 pt-28 pb-12 sm:pt-32 sm:pb-16 md:px-10 md:pt-40">
         <div className="mx-auto max-w-7xl">
           <Reveal>
             <span className="eyebrow">{todos.length} empreendimentos</span>
-            <h1 className="display mt-4 text-5xl text-paper-50 md:text-7xl lg:text-8xl">
+            <h1 className="display mt-4 text-4xl text-paper-50 sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
               Skyline<br />
               <span className="italic text-gold-400">em movimento.</span>
             </h1>

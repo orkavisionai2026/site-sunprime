@@ -16,19 +16,19 @@ export default function SobrePage() {
   return (
     <div className="bg-ink-950">
       {/* ——— MANIFESTO ————————————————————————————————————————————————————— */}
-      <CinematicSection className="relative min-h-screen px-6 pt-40 pb-24 md:px-10">
+      <CinematicSection className="relative min-h-screen px-6 pt-28 pb-20 sm:pt-32 sm:pb-24 md:px-10 md:pt-40">
         <div className="mx-auto max-w-5xl">
           <Reveal>
             <span className="eyebrow">{sobre.manifestoTitulo}</span>
           </Reveal>
-          <div className="mt-14 space-y-10">
+          <div className="mt-12 space-y-8 sm:mt-14 sm:space-y-10">
             {sobre.manifestoVersos.map((verso, i) => (
               <Reveal key={i} delay={0.08 * i}>
                 <p
                   className={`
                     display leading-[1.08] text-paper-50
-                    ${i === 0 ? 'text-4xl md:text-7xl' : 'text-2xl md:text-5xl'}
-                    ${i % 2 === 1 ? 'md:pl-16 text-gold-400 italic' : ''}
+                    ${i === 0 ? 'text-3xl sm:text-4xl md:text-6xl lg:text-7xl' : 'text-xl sm:text-2xl md:text-4xl lg:text-5xl'}
+                    ${i % 2 === 1 ? 'md:pl-12 lg:pl-16 text-gold-400 italic' : ''}
                   `}
                 >
                   {verso}
@@ -40,11 +40,11 @@ export default function SobrePage() {
       </CinematicSection>
 
       {/* ——— MISSÃO ——————————————————————————————————————————————————————— */}
-      <CinematicSection className="relative border-y border-ink-800/60 px-6 py-24 md:px-10 md:py-36">
-        <div className="mx-auto grid max-w-7xl gap-16 md:grid-cols-2 md:items-center">
+      <CinematicSection className="relative border-y border-ink-800/60 px-6 py-20 sm:py-24 md:px-10 md:py-32 lg:py-36">
+        <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-2 md:items-center md:gap-16">
           <Reveal>
             <span className="eyebrow">{sobre.missaoTitulo}</span>
-            <p className="display mt-8 text-3xl leading-snug text-paper-50 md:text-5xl">
+            <p className="display mt-6 text-2xl leading-snug text-paper-50 sm:mt-8 sm:text-3xl md:text-4xl lg:text-5xl">
               {sobre.missaoTexto}
             </p>
           </Reveal>
@@ -65,24 +65,24 @@ export default function SobrePage() {
       </CinematicSection>
 
       {/* ——— VALORES ——————————————————————————————————————————————————————— */}
-      <CinematicSection className="px-6 py-24 md:px-10 md:py-36">
+      <CinematicSection className="px-6 py-20 sm:py-24 md:px-10 md:py-32 lg:py-36">
         <div className="mx-auto max-w-7xl">
           <Reveal>
             <span className="eyebrow">Nossos valores</span>
-            <h2 className="display mt-4 text-4xl text-paper-50 md:text-6xl">
+            <h2 className="display mt-4 text-3xl text-paper-50 sm:text-4xl md:text-5xl lg:text-6xl">
               Quatro princípios
               <br />
               <span className="italic text-gold-400">que nos guiam.</span>
             </h2>
           </Reveal>
-          <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-12 grid gap-6 sm:mt-16 md:grid-cols-2 lg:grid-cols-4">
             {sobre.valores.map((valor, i) => (
               <Reveal key={valor.nome} delay={i * 0.08}>
-                <div className="flex h-full flex-col gap-4 rounded-xl border border-ink-800 bg-ink-900/40 p-8 transition-colors hover:border-gold-500/50">
+                <div className="flex h-full flex-col gap-4 rounded-xl border border-ink-800 bg-ink-900/40 p-6 transition-colors hover:border-gold-500/50 sm:p-8">
                   <span className="font-mono text-xs text-gold-400">
                     0{i + 1}
                   </span>
-                  <h3 className="display text-3xl text-paper-50">{valor.nome}</h3>
+                  <h3 className="display text-2xl text-paper-50 sm:text-3xl">{valor.nome}</h3>
                   <p className="text-sm leading-relaxed text-ink-200">{valor.descricao}</p>
                 </div>
               </Reveal>
@@ -92,8 +92,8 @@ export default function SobrePage() {
       </CinematicSection>
 
       {/* ——— QUEM SOMOS / CEO ———————————————————————————————————————————— */}
-      <CinematicSection className="border-t border-ink-800/60 px-6 py-24 md:px-10 md:py-36">
-        <div className="mx-auto grid max-w-7xl gap-16 md:grid-cols-[1fr_1.2fr] md:items-center">
+      <CinematicSection className="border-t border-ink-800/60 px-6 py-20 sm:py-24 md:px-10 md:py-32 lg:py-36">
+        <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-[1fr_1.2fr] md:items-center md:gap-16">
           {sobre.ceo.foto && (
             <Reveal>
               <div className="relative aspect-[3/4] overflow-hidden rounded-xl bg-ink-800">
@@ -109,10 +109,10 @@ export default function SobrePage() {
           )}
           <Reveal delay={0.15}>
             <span className="eyebrow">Quem somos · desde {sobre.anoFundacao}</span>
-            <h2 className="display mt-6 text-4xl text-paper-50 md:text-6xl">
+            <h2 className="display mt-6 text-3xl text-paper-50 sm:text-4xl md:text-5xl lg:text-6xl">
               {sobre.ceo.headline}
             </h2>
-            <div className="mt-8 space-y-5 text-lg leading-relaxed text-ink-200">
+            <div className="mt-6 space-y-5 text-base leading-relaxed text-ink-200 sm:mt-8 sm:text-lg">
               {sobre.ceo.paragrafos.map((p, i) => (
                 <p key={i}>{p}</p>
               ))}
@@ -136,9 +136,9 @@ export default function SobrePage() {
           />
         )}
         <div className="absolute inset-0 bg-gradient-to-br from-ink-950/80 via-ink-950/60 to-ocean-900/70" />
-        <div className="relative mx-auto max-w-4xl px-6 py-32 text-center md:px-10 md:py-48">
+        <div className="relative mx-auto max-w-4xl px-6 py-24 text-center sm:py-32 md:px-10 md:py-40 lg:py-48">
           <Reveal>
-            <p className="display text-3xl italic leading-snug text-paper-50 md:text-5xl">
+            <p className="display text-2xl italic leading-snug text-paper-50 sm:text-3xl md:text-4xl lg:text-5xl">
               “{sobre.quoteDna.texto}”
             </p>
             <p className="mt-10 font-mono text-xs uppercase tracking-[0.3em] text-gold-300">
@@ -149,10 +149,10 @@ export default function SobrePage() {
       </CinematicSection>
 
       {/* ——— TAGLINE FINAL ——————————————————————————————————————————————— */}
-      <CinematicSection className="px-6 py-32 md:px-10 md:py-40">
+      <CinematicSection className="px-6 py-24 sm:py-32 md:px-10 md:py-40">
         <div className="mx-auto max-w-5xl text-center">
           <Reveal>
-            <p className="display text-4xl leading-tight text-paper-50 md:text-7xl">
+            <p className="display text-3xl leading-tight text-paper-50 sm:text-4xl md:text-6xl lg:text-7xl">
               {sobre.taglineFinal}
             </p>
           </Reveal>

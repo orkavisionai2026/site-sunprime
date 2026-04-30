@@ -28,7 +28,7 @@ export default function EmpreendimentoPage({ params }: { params: Params }) {
   return (
     <article className="bg-ink-950 text-paper-100">
       {/* ——— HERO ————————————————————————————————————————————————————————— */}
-      <section className="relative h-[85vh] min-h-[640px] w-full overflow-hidden">
+      <section className="relative h-[80vh] min-h-[560px] w-full overflow-hidden sm:h-[85vh] sm:min-h-[640px]">
         <Image
           src={emp.render?.src ?? emp.capa.src}
           alt={emp.render?.alt ?? emp.capa.alt ?? emp.nome}
@@ -39,10 +39,10 @@ export default function EmpreendimentoPage({ params }: { params: Params }) {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-ink-950/60 via-transparent to-ink-950" />
 
-        <div className="absolute inset-x-0 bottom-0 mx-auto max-w-7xl px-6 pb-16 md:px-10">
+        <div className="absolute inset-x-0 bottom-0 mx-auto max-w-7xl px-6 pb-12 sm:pb-16 md:px-10">
           <Reveal>
             <span className="eyebrow">{emp.status.titulo}</span>
-            <h1 className="display mt-4 text-5xl leading-[1.02] text-paper-50 sm:text-6xl md:text-8xl lg:text-[10rem]">
+            <h1 className="display mt-4 text-[2.75rem] leading-[1.02] text-paper-50 sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl">
               {emp.nome}
             </h1>
             {emp.localizacao?.cidade && (
@@ -57,7 +57,7 @@ export default function EmpreendimentoPage({ params }: { params: Params }) {
 
       {/* ——— GALERIA ——————————————————————————————————————————————————————— */}
       {emp.galeria.length > 0 && (
-        <CinematicSection className="px-6 py-20 md:px-10 md:py-28">
+        <CinematicSection className="px-6 py-16 sm:py-20 md:px-10 md:py-28">
           <div className="mx-auto max-w-7xl">
             <Reveal>
               <span className="eyebrow">Galeria · {emp.galeria.length} imagens</span>
@@ -82,8 +82,8 @@ export default function EmpreendimentoPage({ params }: { params: Params }) {
       )}
 
       {/* ——— DESCRIÇÃO + FICHA ———————————————————————————————————————————— */}
-      <CinematicSection className="px-6 py-24 md:px-10 md:py-32">
-        <div className="mx-auto grid max-w-7xl gap-16 md:grid-cols-[1.4fr_1fr]">
+      <CinematicSection className="px-6 py-20 sm:py-24 md:px-10 md:py-32">
+        <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-[1.4fr_1fr] md:gap-16">
           <Reveal>
             <span className="eyebrow">Sobre o empreendimento</span>
             <div className="mt-8 space-y-6">
@@ -127,11 +127,11 @@ export default function EmpreendimentoPage({ params }: { params: Params }) {
 
       {/* ——— ARQUITETOS ——————————————————————————————————————————————————— */}
       {emp.arquitetos.length > 0 && (
-        <CinematicSection className="border-t border-ink-800/60 bg-gradient-to-b from-ink-950 to-ocean-900/20 px-6 py-24 md:px-10 md:py-32">
+        <CinematicSection className="border-t border-ink-800/60 bg-gradient-to-b from-ink-950 to-ocean-900/20 px-6 py-20 sm:py-24 md:px-10 md:py-32">
           <div className="mx-auto max-w-7xl">
             <Reveal>
               <span className="eyebrow">Assinatura</span>
-              <h2 className="display mt-4 text-4xl text-paper-50 md:text-5xl">
+              <h2 className="display mt-4 text-3xl text-paper-50 sm:text-4xl md:text-5xl">
                 Arquitetura & parceiros
               </h2>
             </Reveal>
@@ -178,18 +178,18 @@ export default function EmpreendimentoPage({ params }: { params: Params }) {
 
       {/* ——— MAPA ————————————————————————————————————————————————————————— */}
       {emp.localizacao?.iframeSrc && (
-        <CinematicSection className="px-6 py-20 md:px-10 md:py-28">
+        <CinematicSection className="px-6 py-16 sm:py-20 md:px-10 md:py-28">
           <div className="mx-auto max-w-7xl">
             <Reveal>
               <span className="eyebrow">Localização</span>
-              <h2 className="display mt-4 text-4xl text-paper-50 md:text-5xl">
+              <h2 className="display mt-4 text-3xl text-paper-50 sm:text-4xl md:text-5xl">
                 {emp.localizacao.cidade}, {emp.localizacao.uf}
               </h2>
             </Reveal>
-            <div className="mt-10 overflow-hidden rounded-xl border border-ink-800">
+            <div className="mt-8 overflow-hidden rounded-xl border border-ink-800 sm:mt-10">
               <iframe
                 src={emp.localizacao.iframeSrc}
-                className="h-[480px] w-full grayscale contrast-125"
+                className="h-[360px] w-full grayscale contrast-125 sm:h-[420px] md:h-[480px]"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 title={`Mapa de ${emp.nome}`}
