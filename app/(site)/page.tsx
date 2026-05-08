@@ -1,47 +1,47 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { CinematicSection } from '@/components/cinematic-section';
-import { EmpreendimentoCard } from '@/components/empreendimento-card';
+import { EmpreendimentosCarousel } from '@/components/empreendimentos-carousel';
+import { HeroImageSequence } from '@/components/hero-image-sequence';
+import { HeroLogo } from '@/components/hero-logo';
 import { Marquee } from '@/components/marquee';
 import { Reveal } from '@/components/reveal';
 import { SunriseText } from '@/components/sunrise-text';
 import { VideoHero } from '@/components/video-hero';
-import { getEmpreendimentos, getInstitucional } from '@/lib/data';
+import { getConfiguracaoSite, getEmpreendimento, getEmpreendimentos, getInstitucional } from '@/lib/data';
+
+const PROJETO_DESTAQUE_SLUG = 'sion';
 
 export default function HomePage() {
   const empreendimentos = getEmpreendimentos();
-  const destaques = empreendimentos.slice(0, 3);
   const institucional = getInstitucional();
+  const projetoDestaque = getEmpreendimento(PROJETO_DESTAQUE_SLUG);
+  const config = getConfiguracaoSite();
+  const whatsappDestaque =
+    projetoDestaque && config.whatsappUrl
+      ? `${config.whatsappUrl}${config.whatsappUrl.includes('?') ? '&' : '?'}text=${encodeURIComponent(
+          `Olá! Tenho interesse no empreendimento ${projetoDestaque.nome} e gostaria de mais informações.`,
+        )}`
+      : config.whatsappUrl;
 
   return (
     <>
-      {/* ——— HERO ————————————————————————————————————————————————————————— */}
-      <section className="relative h-screen min-h-[560px] w-full overflow-hidden sm:min-h-[640px] md:min-h-[720px]">
-        <VideoHero
-          video="/hero/hero.mp4"
-          poster="/hero/hero-poster.jpg"
-          alt="Vista aérea de Meia Praia, Itapema — Sunprime Empreendimentos"
-          className="absolute inset-0 h-full w-full object-cover object-[30%_center] md:object-center"
-        />
+      {/* ——— HERO — sequência de imagens controlada por scroll ————————————— */}
+      <HeroImageSequence
+        basePath="/hero-sequence"
+        basePathMobile="/hero-sequence-mobile"
+        totalFrames={121}
+        alt="Vista aérea de Meia Praia, Itapema — Sunprime Empreendimentos"
+      >
         <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(0,0,0,0.7)_0%,rgba(0,0,0,0.4)_30%,rgba(0,0,0,0.6)_65%,#000_95%)]" />
 
-        {/* Logo centralizada — único elemento do hero */}
-        <div className="absolute inset-0 z-10 flex items-center justify-center px-6">
-          <Image
-            src="/brand/logo.png"
-            alt="Sunprime"
-            width={339}
-            height={48}
-            priority
-            className="h-10 w-auto opacity-90 sm:h-12 md:h-14 lg:h-16 xl:h-20"
-          />
-        </div>
+        {/* Logo centralizada — fade in no mount + fade out via scroll */}
+        <HeroLogo />
 
         {/* Scroll-hint discreto no rodapé do hero */}
         <div className="absolute inset-x-0 bottom-8 z-10 hidden justify-center md:flex">
           <p className="font-mono text-xs uppercase tracking-[0.3em] text-ink-300">↓ role</p>
         </div>
-      </section>
+      </HeroImageSequence>
 
       {/* ——— INTRO (eyebrow + título + CTAs) ————————————————————————————— */}
       <section className="relative bg-ink-950 px-6 py-20 sm:px-8 sm:py-24 md:px-10 md:py-32 lg:px-16 lg:py-40 xl:px-20">
@@ -83,56 +83,158 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ——— STATEMENT ——————————————————————————————————————————————————— */}
-      <CinematicSection offset={100} fromScale={0.95} className="overflow-hidden bg-ink-950 px-6 py-20 sm:px-8 sm:py-24 md:px-10 md:py-32 lg:px-16 lg:py-40 xl:px-20">
-        <div className="mx-auto max-w-7xl">
-          <Reveal y={70}>
-            <p className="display text-3xl leading-[1.05] text-paper-50 sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
-              Projetamos espaços
-            </p>
-          </Reveal>
-          <Reveal delay={0.18} y={70}>
-            <p className="display text-3xl leading-[1.05] text-paper-50 sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
-              com design inspirador.
-            </p>
-          </Reveal>
-          <Reveal delay={0.36} y={70}>
-            <p className="display mt-1 text-3xl leading-[1.05] italic text-gold-400 sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
-              Uma explosão de formas.
-            </p>
-          </Reveal>
+      {/* ——— CARROSSEL DE EMPREENDIMENTOS ————————————————————————————————— */}
+      <section className="relative bg-ink-950 pt-2 pb-16 sm:pb-20 md:pb-24">
+        <div className="mx-auto mb-8 flex max-w-7xl flex-wrap items-end justify-between gap-4 px-6 sm:mb-10 sm:px-8 md:px-10 lg:px-16 xl:px-20">
+          <div>
+            <span className="eyebrow">Conheça nossos empreendimentos</span>
+            <h2 className="display mt-3 text-2xl text-paper-50 sm:text-3xl md:text-4xl lg:text-5xl">
+              Skyline em <span className="italic text-gold-400">movimento.</span>
+            </h2>
+          </div>
+          <Link
+            href="/empreendimentos"
+            className="eyebrow text-ink-200 hover:text-gold-400"
+          >
+            Ver todos →
+          </Link>
         </div>
-      </CinematicSection>
 
-      {/* ——— DESTAQUES ——————————————————————————————————————————————————— */}
-      <CinematicSection className="relative bg-ink-950 px-6 py-20 sm:py-24 md:px-10 md:py-32 lg:py-40">
-        <div className="mx-auto max-w-7xl">
-          <Reveal className="flex flex-wrap items-end justify-between gap-6">
-            <div className="max-w-2xl">
-              <span className="eyebrow">Empreendimentos em destaque</span>
-              <h2 className="display mt-4 text-3xl text-paper-50 sm:text-4xl md:text-5xl lg:text-6xl">
-                Cada projeto conta
-                <br />
-                <span className="italic text-gold-400">uma história.</span>
-              </h2>
-            </div>
-            <Link
-              href="/empreendimentos"
-              className="eyebrow text-ink-200 hover:text-gold-400"
-            >
-              Ver todos →
-            </Link>
-          </Reveal>
+        <EmpreendimentosCarousel items={empreendimentos} />
+      </section>
 
-          <div className="mt-16 grid gap-6 md:grid-cols-3">
-            {destaques.map((emp, i) => (
-              <Reveal key={emp.slug} delay={i * 0.1}>
-                <EmpreendimentoCard emp={emp} priority={i === 0} />
-              </Reveal>
-            ))}
+      {/* ——— STATEMENT (card off-white flutuando no preto) —————————————— */}
+      <CinematicSection
+        offset={100}
+        fromScale={0.95}
+        className="overflow-hidden bg-ink-950 px-4 py-20 sm:px-6 sm:py-24 md:px-10 md:py-32 lg:py-40"
+      >
+        <div className="mx-auto max-w-6xl">
+          <div
+            className="
+              relative rounded-[2rem] bg-paper-50 px-8 py-16 sm:rounded-[2.5rem] sm:px-12 sm:py-20
+              md:rounded-[3rem] md:px-16 md:py-28 lg:px-24 lg:py-32
+              shadow-[0_40px_80px_-30px_rgba(0,0,0,0.6),inset_0_1px_0_rgba(255,255,255,0.4)]
+            "
+          >
+            <Reveal y={70}>
+              <p className="display text-3xl leading-[1.05] text-ink-950 sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
+                Projetamos espaços
+              </p>
+            </Reveal>
+            <Reveal delay={0.18} y={70}>
+              <p className="display text-3xl leading-[1.05] text-ink-950 sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
+                com design inspirador.
+              </p>
+            </Reveal>
+            <Reveal delay={0.36} y={70}>
+              <p className="display mt-1 text-3xl leading-[1.05] italic text-ink-700 sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
+                Uma explosão de formas.
+              </p>
+            </Reveal>
           </div>
         </div>
       </CinematicSection>
+
+      {/* ——— DESTAQUE EDITORIAL — projeto-bandeira (Sion) ———————————————— */}
+      {projetoDestaque && (
+        <CinematicSection className="relative overflow-hidden bg-ink-950 px-6 py-20 sm:py-24 md:px-10 md:py-32 lg:py-40">
+          <div className="mx-auto max-w-7xl">
+            <Reveal>
+              <span className="eyebrow text-gold-400">Lançamento em destaque</span>
+            </Reveal>
+
+            <div className="mt-10 grid gap-10 md:mt-14 md:grid-cols-[1fr_1.1fr] md:items-center md:gap-12 lg:gap-16">
+              {/* Vídeo do empreendimento */}
+              <Reveal>
+                <Link
+                  href={`/empreendimentos/${projetoDestaque.slug}`}
+                  className="group relative block overflow-hidden rounded-2xl bg-ink-900"
+                >
+                  <div className="relative aspect-[5/6] w-full md:aspect-square lg:aspect-[5/6]">
+                    <VideoHero
+                      video="/empreendimentos/sion/destaque.mp4"
+                      poster={projetoDestaque.render?.src ?? projetoDestaque.capa.src}
+                      alt={projetoDestaque.render?.alt ?? projetoDestaque.capa.alt ?? projetoDestaque.nome}
+                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-[1500ms] ease-out group-hover:scale-[1.04]"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-ink-950/60 via-transparent to-transparent" />
+                  </div>
+                  <span
+                    className="
+                      eyebrow absolute left-5 top-5 rounded-full
+                      border border-white/15 bg-white/10 px-3 py-1 text-paper-50 backdrop-blur-md
+                    "
+                  >
+                    {projetoDestaque.status.titulo}
+                  </span>
+                </Link>
+              </Reveal>
+
+              {/* Conteúdo editorial */}
+              <Reveal delay={0.15}>
+                <div>
+                  <h2 className="display text-4xl leading-[1.02] text-paper-50 sm:text-5xl md:text-6xl lg:text-7xl">
+                    {projetoDestaque.nome}
+                  </h2>
+                  {projetoDestaque.localizacao && (
+                    <p className="mt-3 font-mono text-xs uppercase tracking-[0.3em] text-ink-300">
+                      {projetoDestaque.localizacao.bairro && `${projetoDestaque.localizacao.bairro} · `}
+                      {projetoDestaque.localizacao.cidade} / {projetoDestaque.localizacao.uf}
+                    </p>
+                  )}
+
+                  {projetoDestaque.descricao[0] && (
+                    <p className="mt-8 text-base leading-relaxed text-ink-200 sm:text-lg">
+                      {projetoDestaque.descricao[0]}
+                    </p>
+                  )}
+
+                  {projetoDestaque.fichaTecnica.length > 0 && (
+                    <dl className="mt-8 grid grid-cols-2 gap-x-6 gap-y-4 border-t border-ink-800/80 pt-6">
+                      {projetoDestaque.fichaTecnica.slice(0, 4).map((item) => (
+                        <div key={item.rotulo}>
+                          <dt className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-400">
+                            {item.rotulo}
+                          </dt>
+                          <dd className="mt-1 text-sm text-paper-100">{item.valor}</dd>
+                        </div>
+                      ))}
+                    </dl>
+                  )}
+
+                  <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
+                    <Link
+                      href={`/empreendimentos/${projetoDestaque.slug}`}
+                      className="
+                        eyebrow glow-box rounded-full bg-gold-500 px-6 py-3 text-center text-ink-950
+                        transition-all hover:bg-gold-400
+                      "
+                    >
+                      Conhecer o {projetoDestaque.nome}
+                    </Link>
+                    {whatsappDestaque && (
+                      <a
+                        href={whatsappDestaque}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="
+                          eyebrow rounded-full border border-white/15 bg-white/5 px-6 py-3 text-center
+                          text-paper-100 backdrop-blur-md
+                          shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]
+                          transition-all hover:bg-white/10
+                        "
+                      >
+                        Falar no WhatsApp
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </Reveal>
+            </div>
+          </div>
+        </CinematicSection>
+      )}
 
       {/* ——— MARQUEE ————————————————————————————————————————————————————— */}
       <div className="relative border-y border-ink-800/60 bg-ink-950 py-10 md:py-16">

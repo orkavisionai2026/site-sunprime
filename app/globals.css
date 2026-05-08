@@ -60,12 +60,25 @@
   /* mono mantido pra compat das classes font-mono — fallback system mono stack */
   --font-mono: ui-monospace, 'SF Mono', Menlo, Monaco, Consolas, monospace;
 
-  /* Curvas e durações "cinematográficas" */
+  /* Curvas e durações "cinematográficas" — paleta expandida (apoiada em
+     princípios do design system: ease-out-quart pra entrada suave, spring
+     com leve overshoot pra sensação tátil, in-out-expo pra drama). */
   --ease-cinema: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-drape: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-in-out-expo: cubic-bezier(0.87, 0, 0.13, 1);
+  --ease-snap: cubic-bezier(0.16, 1, 0.3, 1);
   --duration-fast: 200ms;
   --duration-base: 420ms;
   --duration-slow: 900ms;
+
+  /* Sombras multi-layer (próxima + distante) — profundidade premium */
+  --shadow-xs: 0 1px 2px rgba(0,0,0,0.5);
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.4), 0 2px 4px rgba(0,0,0,0.3);
+  --shadow-md: 0 2px 4px rgba(0,0,0,0.35), 0 8px 16px rgba(0,0,0,0.25);
+  --shadow-lg: 0 4px 8px rgba(0,0,0,0.35), 0 16px 32px rgba(0,0,0,0.3);
+  --shadow-glow-white: 0 8px 32px rgba(255,255,255,0.15);
 
   /* Escala tipográfica display (rítmica, não escalonamento linear) */
   --text-display-sm: 2.75rem;
@@ -197,4 +210,72 @@ video[data-bg]::-internal-media-controls-overlay-cast-button {
     text-shadow: none;
   }
 
+}
+
+/* ============================================
+   FUNDAÇÕES TRANSVERSAIS — responsividade + acessibilidade
+   (princípios dos prompts DESIGN_IMPACTO + RESPONSIVIDADE)
+   ============================================ */
+
+/* 1. Box-sizing global + sem overflow horizontal acidental */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+html, body { overflow-x: clip; }
+
+/* 2. Imagens/vídeos sempre fluidos e sem CLS */
+img, video, svg, canvas { max-width: 100%; height: auto; display: block; }
+
+/* 3. Tipografia mínima: 16px no body previne zoom no iOS em inputs */
+input, textarea, select { font-size: max(16px, 1rem); }
+
+/* 4. Largura de leitura confortável pra parágrafos longos */
+.prose, .reading { max-width: 65ch; }
+
+/* 5. Foco visível elegante (substitui o outline padrão) */
+:where(a, button, [role="button"], input, textarea, select, summary):focus-visible {
+  outline: 2px solid var(--color-paper-100);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* 6. Touch targets — 44px em ponteiros grossos (mobile/tablet)
+   Aplica em links/botões "stand-alone" (não pega links inline em <p>/<li>) */
+@media (hover: none) and (pointer: coarse) {
+  :where(button, a.btn, [role="button"], header nav a, nav.eyebrow a) {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* 7. Em ponteiros finos (mouse/trackpad), sutiliza :active */
+@media (hover: hover) and (pointer: fine) {
+  :where(a, button)[data-press]:active {
+    transform: scale(0.98);
+  }
+}
+
+/* 8. iOS Safari — substitui 100vh por 100dvh (URL bar não quebra layout)
+   Aplica via Tailwind `h-screen` que vira `height: 100dvh` em browsers
+   modernos via @supports. */
+@supports (height: 100dvh) {
+  .h-screen { height: 100dvh; }
+}
+
+/* 9. prefers-reduced-motion — corte global de animações
+   (inviável testar individualmente; segue o spec do design system). */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* 10. Hover apenas onde faz sentido — proteção pra mobile */
+@media (hover: none) {
+  /* Componentes que dependem de hover desktop devem trazer fallback :focus/:active.
+     Esta regra é defensiva: garante que efeitos puramente cosméticos (lift, glow)
+     não disparam em toques acidentais. */
+  *:hover { transition: none !important; }
 }

@@ -6,13 +6,15 @@ import { useEffect, useRef, useState } from 'react';
 
 const SESSION_KEY = 'sunprime-splash-seen';
 const MIN_DISPLAY_MS = 1100;
+const MAX_DISPLAY_MS = 5000; // Failsafe: nunca trava o usuário em rede ruim
 const FADE_MS = 700;
 const PREFETCH_ROUTES = ['/empreendimentos', '/sobre', '/contato'];
 
 /**
  * Tela de carregamento: logo stacked + ring dourado + porcentagem.
  * - Aparece uma vez por sessão (sessionStorage)
- * - Anima 0→100% baseado em (a) curva de tempo, (b) window.load real
+ * - Anima 0→100% baseado em (a) curva de tempo, (b) DOMContentLoaded real
+ * - Failsafe: força fim em 5s mesmo se DOM não disparar (conexão ruim)
  * - Faz prefetch das outras rotas em background pra próxima navegação ser instantânea
  * - Respeita prefers-reduced-motion
  */
@@ -42,14 +44,17 @@ export function Splash() {
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const minMs = prefersReduced ? 300 : MIN_DISPLAY_MS;
     const start = performance.now();
-    const loadedRef = { current: document.readyState === 'complete' };
+
+    // "Pronto" assim que o DOM termina de parsear (NÃO espera todas as imagens)
+    const isDomReady = () => document.readyState !== 'loading';
+    const loadedRef = { current: isDomReady() };
 
     let frame = 0;
     const tick = () => {
       const elapsed = performance.now() - start;
 
       if (loadedRef.current) {
-        // Pós-load: corre suavemente até 100
+        // Pós-DOM-ready: corre até 100
         setProgress((p) => {
           const next = p + Math.max(1.2, (100 - p) * 0.18);
           if (next >= 100) return 100;
@@ -57,35 +62,32 @@ export function Splash() {
           return next;
         });
       } else {
-        // Pré-load: ramp assintótico até ~92% (sensação de progresso real)
+        // Pré-DOM-ready: ramp assintótico até ~92%
         const target = 92 * (1 - Math.exp(-elapsed / 1400));
         setProgress(target);
         frame = requestAnimationFrame(tick);
       }
     };
 
-    const onLoad = () => {
+    const onReady = () => {
       loadedRef.current = true;
     };
 
     if (!loadedRef.current) {
-      window.addEventListener('load', onLoad, { once: true });
+      document.addEventListener('DOMContentLoaded', onReady, { once: true });
     }
+
+    // Failsafe: força "ready" depois de MAX_DISPLAY_MS - 600ms (deixa 600ms pra animar 0→100)
+    const failsafeId = window.setTimeout(() => {
+      loadedRef.current = true;
+    }, Math.max(0, MAX_DISPLAY_MS - 600));
 
     frame = requestAnimationFrame(tick);
 
-    // Esconde quando bater 100% E o tempo mínimo passar
-    const hideCheckId = window.setInterval(() => {
-      const elapsed = performance.now() - start;
-      if (progress >= 100 && elapsed >= minMs) {
-        // será tratado pelo effect de fade-out abaixo
-      }
-    }, 50);
-
     return () => {
       cancelAnimationFrame(frame);
-      window.clearInterval(hideCheckId);
-      window.removeEventListener('load', onLoad);
+      window.clearTimeout(failsafeId);
+      document.removeEventListener('DOMContentLoaded', onReady);
     };
   }, [router]);
 
@@ -172,6 +174,14 @@ export function Splash() {
           />
         </div>
       </div>
+
+      {/* Selo VERSÃO DEMO — fixo no rodapé do splash */}
+      <span className="
+        absolute bottom-10 left-1/2 -translate-x-1/2
+        font-mono text-[10px] tracking-[0.4em] text-ink-300 uppercase md:text-xs
+      ">
+        Versão · Demo
+      </span>
 
       <span className="sr-only">Carregando</span>
     </div>
