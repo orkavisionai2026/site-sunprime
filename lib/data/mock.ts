@@ -91,8 +91,10 @@ function parseFichaTecnica(raw: string | null | undefined) {
 function paragraphs(text: string | null | undefined): string[] {
   if (!text) return [];
   return text
-    .split(/\n{1,}/)
-    .map((p) => p.trim())
+    // Quebra apenas por linhas em branco (parágrafo real); \n simples é só wrap.
+    .split(/\n\s*\n+/)
+    // Dentro do mesmo parágrafo, junta as linhas com espaço.
+    .map((p) => p.replace(/\s*\n\s*/g, ' ').trim())
     .filter(Boolean);
 }
 

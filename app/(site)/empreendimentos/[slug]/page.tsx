@@ -51,6 +51,13 @@ export default function EmpreendimentoPage({ params }: { params: Params }) {
                 {emp.localizacao.cidade} / {emp.localizacao.uf}
               </p>
             )}
+            {emp.descricao[0] && (
+              <p className="mt-6 max-w-2xl text-base leading-relaxed text-ink-200 sm:mt-8 sm:text-lg">
+                {emp.descricao[0].length > 140
+                  ? `${emp.descricao[0].slice(0, 140).trimEnd()}…`
+                  : emp.descricao[0]}
+              </p>
+            )}
           </Reveal>
         </div>
       </section>
