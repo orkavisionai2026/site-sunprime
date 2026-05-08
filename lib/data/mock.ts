@@ -113,6 +113,9 @@ type EmpreendimentoRaw = {
   }>;
   localizacao: {
     endereco: string | null;
+    bairro?: string | null;
+    cidade?: string | null;
+    uf?: string | null;
     lat: number | null;
     lon: number | null;
     iframe_src: string | null;
@@ -160,8 +163,9 @@ export function getEmpreendimentos(): Empreendimento[] {
       })),
       localizacao: {
         endereco: emp.localizacao?.endereco ?? undefined,
-        cidade: 'Itapema',
-        uf: 'SC',
+        bairro: emp.localizacao?.bairro ?? undefined,
+        cidade: emp.localizacao?.cidade ?? 'Itapema',
+        uf: emp.localizacao?.uf ?? 'SC',
         lat: emp.localizacao?.lat ?? undefined,
         lng: emp.localizacao?.lon ?? undefined,
         iframeSrc: emp.localizacao?.iframe_src ?? undefined,

@@ -23,7 +23,10 @@
       "endereco": null,
       "lat": -27.13534072876067,
       "lon": -48.612440070668455,
-      "iframe_src": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3550.665599765123!2d-48.612440070668455!3d-27.13534072876067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94d8af63c08acc69:0x70fca767722a093f!2sSuncool Tower!5e0!3m2!1spt-BR!2sbr!4v1663080513261!5m2!1spt-BR!2sbr"
+      "iframe_src": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3550.665599765123!2d-48.612440070668455!3d-27.13534072876067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94d8af63c08acc69:0x70fca767722a093f!2sSuncool Tower!5e0!3m2!1spt-BR!2sbr!4v1663080513261!5m2!1spt-BR!2sbr",
+      "bairro": "Meia Praia",
+      "cidade": "Itapema",
+      "uf": "SC"
     },
     "disclaimer": null
   },
@@ -61,7 +64,10 @@
       "endereco": null,
       "lat": -27.128970383035067,
       "lon": -48.607187484554885,
-      "iframe_src": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3550.8679019887354!2d-48.607187484554885!3d-27.128970383035067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94d8ae2997cc494d:0x87f7ac324038b40f!2sSunsky Tower!5e0!3m2!1spt-BR!2sbr!4v1663080274618!5m2!1spt-BR!2sbr"
+      "iframe_src": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3550.8679019887354!2d-48.607187484554885!3d-27.128970383035067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94d8ae2997cc494d:0x87f7ac324038b40f!2sSunsky Tower!5e0!3m2!1spt-BR!2sbr!4v1663080274618!5m2!1spt-BR!2sbr",
+      "bairro": "Meia Praia",
+      "cidade": "Itapema",
+      "uf": "SC"
     },
     "disclaimer": null
   },
@@ -96,7 +102,10 @@
       "endereco": null,
       "lat": -27.1403206,
       "lon": -48.5979864,
-      "iframe_src": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14202.029696351177!2d-48.5979864!3d-27.1403206!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0:0xae96ab6154d578ae!2sSunview Tower!5e0!3m2!1spt-BR!2sbr!4v1663079772799!5m2!1spt-BR!2sbr"
+      "iframe_src": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14202.029696351177!2d-48.5979864!3d-27.1403206!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0:0xae96ab6154d578ae!2sSunview Tower!5e0!3m2!1spt-BR!2sbr!4v1663079772799!5m2!1spt-BR!2sbr",
+      "bairro": "Meia Praia",
+      "cidade": "Itapema",
+      "uf": "SC"
     },
     "disclaimer": null
   },
@@ -122,7 +131,10 @@
       "endereco": null,
       "lat": -27.137645,
       "lon": -48.597297,
-      "iframe_src": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14202.369650077175!2d-48.597297!3d-27.137645!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0:0x4398fb9dfc950e17!2sChateau Excellence!5e0!3m2!1spt-BR!2sbr!4v1663075255676!5m2!1spt-BR!2sbr"
+      "iframe_src": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14202.369650077175!2d-48.597297!3d-27.137645!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0:0x4398fb9dfc950e17!2sChateau Excellence!5e0!3m2!1spt-BR!2sbr!4v1663075255676!5m2!1spt-BR!2sbr",
+      "bairro": "Meia Praia",
+      "cidade": "Itapema",
+      "uf": "SC"
     },
     "disclaimer": null
   },
@@ -161,7 +173,10 @@
       "endereco": null,
       "lat": null,
       "lon": null,
-      "iframe_src": null
+      "iframe_src": null,
+      "bairro": "Balneário Perequê",
+      "cidade": "Porto Belo",
+      "uf": "SC"
     },
     "disclaimer": null
   },
@@ -213,7 +228,10 @@
       "endereco": null,
       "lat": -27.10635680122542,
       "lon": -48.6167517886012,
-      "iframe_src": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3551.5856840122!2d-48.6167517886012!3d-27.10635680122542!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94d8b1f746b2cecb%3A0xdc17eb91f939186e!2sEra%20by%20Sunprime!5e0!3m2!1spt-BR!2sbr!4v1721840209534!5m2!1spt-BR!2sbr"
+      "iframe_src": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3551.5856840122!2d-48.6167517886012!3d-27.10635680122542!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94d8b1f746b2cecb%3A0xdc17eb91f939186e!2sEra%20by%20Sunprime!5e0!3m2!1spt-BR!2sbr!4v1721840209534!5m2!1spt-BR!2sbr",
+      "bairro": "Centro",
+      "cidade": "Itapema",
+      "uf": "SC"
     },
     "disclaimer": "PRÉ-LANÇAMENTO - Nos termos da lei no 4.591/64, informamos que o empreendimento somente será vendido e comercializado a partir do Registro da Incorporação no Cartório de Registro de Imóveis, não se responsabilizando a Construtora por anúncios de terceiros em sentido oposto. As Imagens são meramente ilustrativas; as ilustrações contidas neste material possuem apenas caráter de sugestão. Os móveis, assim como alguns materiais de acabamento representados nas ilustrações e plantas, não constituem parte integrante do imóvel. O imóvel será entregue conforme especificado no memorial descritivo, podendo haver modificações do projeto por motivos técnicos sem aviso prévio. Protocolo de incorporação junto ao ONR (Operador Nacional do Sistema de Registro Eletrônico de Imóveis) sob n° AC002503240."
   },
@@ -254,7 +272,10 @@
       "endereco": null,
       "lat": -27.138190098939432,
       "lon": -48.59903457078125,
-      "iframe_src": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d887.6437746218675!2d-48.59903457078125!3d-27.138190098939432!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0:0x46ec2c22d4e3ca4b!2zMjfCsDA4JzE3LjUiUyA0OMKwMzUnNTQuNiJX!5e0!3m2!1spt-BR!2sbr!4v1668772701667!5m2!1spt-BR!2sbr"
+      "iframe_src": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d887.6437746218675!2d-48.59903457078125!3d-27.138190098939432!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0:0x46ec2c22d4e3ca4b!2zMjfCsDA4JzE3LjUiUyA0OMKwMzUnNTQuNiJX!5e0!3m2!1spt-BR!2sbr!4v1668772701667!5m2!1spt-BR!2sbr",
+      "bairro": "Meia Praia",
+      "cidade": "Itapema",
+      "uf": "SC"
     },
     "disclaimer": "PRÉ-LANÇAMENTO - Nos termos da lei no 4.591/64, informamos que o empreendimento somente será vendido e comercializado a partir do Registro da Incorporação no Cartório de Registro de Imóveis, não se responsabilizando a Construtora por anúncios de terceiros em sentido oposto. As Imagens são meramente ilustrativas; as ilustrações contidas neste material possuem apenas caráter de sugestão. Os móveis, assim como alguns materiais de acabamento representados nas ilustrações e plantas, não constituem parte integrante do imóvel. O imóvel será entregue conforme especificado no memorial descritivo, podendo haver modificações do projeto por motivos técnicos sem aviso prévio."
   },
@@ -291,7 +312,10 @@
       "endereco": null,
       "lat": -27.146504609535043,
       "lon": -48.58733948433863,
-      "iframe_src": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3550.3109640256926!2d-48.58733948433863!3d-27.146504609535043!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94d8af49ee8fdcf9:0x371262055cac6c36!2sSunhaus Tower!5e0!3m2!1spt-BR!2sbr!4v1663091359959!5m2!1spt-BR!2sbr"
+      "iframe_src": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3550.3109640256926!2d-48.58733948433863!3d-27.146504609535043!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94d8af49ee8fdcf9:0x371262055cac6c36!2sSunhaus Tower!5e0!3m2!1spt-BR!2sbr!4v1663091359959!5m2!1spt-BR!2sbr",
+      "bairro": "Balneário Perequê",
+      "cidade": "Porto Belo",
+      "uf": "SC"
     },
     "disclaimer": null
   },
@@ -334,7 +358,10 @@
       "endereco": null,
       "lat": -27.098096800000004,
       "lon": -48.6157792,
-      "iframe_src": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3551.8477283485227!2d-48.6157792!3d-27.098096800000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94d8b1d176bb08ed:0xfbf2eaffcf312b5e!2sSunstar Tower!5e0!3m2!1spt-BR!2sbr!4v1663003857443!5m2!1spt-BR!2sbr"
+      "iframe_src": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3551.8477283485227!2d-48.6157792!3d-27.098096800000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94d8b1d176bb08ed:0xfbf2eaffcf312b5e!2sSunstar Tower!5e0!3m2!1spt-BR!2sbr!4v1663003857443!5m2!1spt-BR!2sbr",
+      "bairro": "Centro",
+      "cidade": "Itapema",
+      "uf": "SC"
     },
     "disclaimer": null
   },
@@ -389,7 +416,10 @@
       "endereco": null,
       "lat": null,
       "lon": null,
-      "iframe_src": null
+      "iframe_src": null,
+      "bairro": "Balneário Perequê",
+      "cidade": "Porto Belo",
+      "uf": "SC"
     },
     "disclaimer": "PRÉ-LANÇAMENTO - Nos termos da lei no 4.591/64, informamos que o empreendimento somente será vendido e comercializado a partir do Registro da Incorporação no Cartório de Registro de Imóveis, não se responsabilizando a Construtora por anúncios de terceiros em sentido oposto. As Imagens são meramente ilustrativas; as ilustrações contidas neste material possuem apenas caráter de sugestão. Os móveis, assim como alguns materiais de acabamento representados nas ilustrações e plantas, não constituem parte integrante do imóvel. O imóvel será entregue conforme especificado no memorial descritivo, podendo haver modificações do projeto por motivos técnicos sem aviso prévio."
   },
@@ -440,7 +470,10 @@
       "endereco": null,
       "lat": null,
       "lon": null,
-      "iframe_src": null
+      "iframe_src": null,
+      "bairro": "Meia Praia",
+      "cidade": "Itapema",
+      "uf": "SC"
     },
     "disclaimer": "PRÉ-LANÇAMENTO - Nos termos da lei no 4.591/64, informamos que o empreendimento somente será vendido e comercializado a partir do Registro da Incorporação no Cartório de Registro de Imóveis, não se responsabilizando a Construtora por anúncios de terceiros em sentido oposto. As Imagens são meramente ilustrativas; as ilustrações contidas neste material possuem apenas caráter de sugestão. Os móveis, assim como alguns materiais de acabamento representados nas ilustrações e plantas, não constituem parte integrante do imóvel. O imóvel será entregue conforme especificado no memorial descritivo, podendo haver modificações do projeto por motivos técnicos sem aviso prévio."
   }
