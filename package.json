@@ -12,8 +12,6 @@
     "seed:dry": "node scripts/seed.mjs --dry-run"
   },
   "dependencies": {
-    "@react-three/drei": "^9.114.0",
-    "@react-three/fiber": "^8.17.10",
     "@sanity/image-url": "^1.1.0",
     "@sanity/vision": "^3.68.0",
     "@studio-freight/lenis": "^1.0.42",
@@ -23,10 +21,10 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "sanity": "^3.68.0",
-    "styled-components": "^6.1.13",
-    "three": "^0.170.0"
+    "styled-components": "^6.1.13"
   },
   "devDependencies": {
+    "@next/bundle-analyzer": "^16.2.6",
     "@sanity/client": "^7.21.0",
     "@tailwindcss/postcss": "^4.0.0-beta.8",
     "@types/node": "^22.10.2",

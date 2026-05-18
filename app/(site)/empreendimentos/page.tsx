@@ -4,6 +4,8 @@ import { EmpreendimentoCard } from '@/components/empreendimento-card';
 import { Reveal } from '@/components/reveal';
 import { getEmpreendimentos } from '@/lib/data';
 
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
   title: 'Empreendimentos',
   description:

@@ -33,6 +33,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* Preconnect ao Fontshare pra acelerar o load do Satoshi */}
         <link rel="preconnect" href="https://api.fontshare.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://cdn.fontshare.com" crossOrigin="anonymous" />
+        {/* Satoshi: preload + stylesheet (substitui @import bloqueante do globals.css) */}
+        <link
+          rel="preload"
+          as="style"
+          href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500&display=swap"
+        />
+        <link
+          rel="stylesheet"
+          href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500&display=swap"
+        />
       </head>
       <body>
         <Providers>{children}</Providers>

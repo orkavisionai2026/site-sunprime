@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
 
 const SESSION_KEY = 'sunprime-splash-seen';
@@ -12,6 +12,7 @@ const PREFETCH_ROUTES = ['/empreendimentos', '/sobre', '/contato'];
 
 /**
  * Tela de carregamento: logo stacked + ring dourado + porcentagem.
+ * - Renderiza SOMENTE em "/" (brand intro da home). Páginas internas pulam.
  * - Aparece uma vez por sessão (sessionStorage)
  * - Anima 0→100% baseado em (a) curva de tempo, (b) DOMContentLoaded real
  * - Failsafe: força fim em 5s mesmo se DOM não disparar (conexão ruim)
@@ -19,12 +20,16 @@ const PREFETCH_ROUTES = ['/empreendimentos', '/sobre', '/contato'];
  * - Respeita prefers-reduced-motion
  */
 export function Splash() {
+  const pathname = usePathname();
   const router = useRouter();
   const [visible, setVisible] = useState(true);
   const [mounted, setMounted] = useState(true);
   const [progress, setProgress] = useState(0);
 
+  const onHome = pathname === '/';
+
   useEffect(() => {
+    if (!onHome) return;
     // Já foi visto nesta sessão → pula
     if (sessionStorage.getItem(SESSION_KEY)) {
       setVisible(false);
@@ -89,10 +94,11 @@ export function Splash() {
       window.clearTimeout(failsafeId);
       document.removeEventListener('DOMContentLoaded', onReady);
     };
-  }, [router]);
+  }, [router, onHome]);
 
   // Quando progress chega a 100, espera o tempo mínimo e dispara fade-out
   useEffect(() => {
+    if (!onHome) return;
     if (progress < 100) return;
     if (sessionStorage.getItem(SESSION_KEY)) return;
 
@@ -103,8 +109,9 @@ export function Splash() {
     }, 200);
 
     return () => window.clearTimeout(id);
-  }, [progress]);
+  }, [progress, onHome]);
 
+  if (!onHome) return null;
   if (!mounted) return null;
 
   const pct = Math.round(progress);
@@ -154,7 +161,7 @@ export function Splash() {
           alt="Sunprime"
           width={105}
           height={131}
-          priority
+          {...({ elementtiming: 'splash-logo' } as Record<string, string>)}
           className="relative z-10 h-16 w-auto md:h-20"
         />
       </div>

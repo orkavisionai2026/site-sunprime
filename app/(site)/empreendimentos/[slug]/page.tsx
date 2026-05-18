@@ -3,10 +3,15 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { CinematicSection } from '@/components/cinematic-section';
+import { EmpreendimentoGaleria } from '@/components/empreendimento-galeria';
 import { Reveal } from '@/components/reveal';
+import { SionVideoIntro } from '@/components/sion-video-intro';
 import { getAllSlugs, getEmpreendimento } from '@/lib/data';
 
 type Params = { slug: string };
+
+export const revalidate = 3600;
+export const dynamicParams = false;
 
 export async function generateStaticParams(): Promise<Params[]> {
   return getAllSlugs().map((slug) => ({ slug }));
@@ -62,6 +67,14 @@ export default function EmpreendimentoPage({ params }: { params: Params }) {
         </div>
       </section>
 
+      {/* ——— VÍDEO DE APRESENTAÇÃO (somente Sion) ———————————————————————— */}
+      {emp.slug === 'sion' && (
+        <SionVideoIntro
+          src="/videos/sion.mp4"
+          poster="/videos/posters/sion.jpg"
+        />
+      )}
+
       {/* ——— GALERIA ——————————————————————————————————————————————————————— */}
       {emp.galeria.length > 0 && (
         <CinematicSection className="px-6 py-16 sm:py-20 md:px-10 md:py-28">
@@ -69,21 +82,7 @@ export default function EmpreendimentoPage({ params }: { params: Params }) {
             <Reveal>
               <span className="eyebrow">Galeria · {emp.galeria.length} imagens</span>
             </Reveal>
-            <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-              {emp.galeria.map((img, i) => (
-                <Reveal key={i} delay={(i % 3) * 0.05}>
-                  <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-ink-800">
-                    <Image
-                      src={img.src}
-                      alt={img.alt ?? `${emp.nome} · imagem ${i + 1}`}
-                      fill
-                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                      className="object-cover transition-transform duration-700 ease-out hover:scale-[1.03]"
-                    />
-                  </div>
-                </Reveal>
-              ))}
-            </div>
+            <EmpreendimentoGaleria imagens={emp.galeria} nomeEmpreendimento={emp.nome} />
           </div>
         </CinematicSection>
       )}

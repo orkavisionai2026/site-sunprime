@@ -1,5 +1,6 @@
 @import "tailwindcss";
-@import url('https://api.fontshare.com/v2/css?f[]=satoshi@400,500&display=swap');
+/* Satoshi: carregada via <link rel="preload"+stylesheet> no head do layout
+   (elimina o serial-blocking do @import e pré-resolve a fonte). */
 
 /**
  * Sunprime — Design System

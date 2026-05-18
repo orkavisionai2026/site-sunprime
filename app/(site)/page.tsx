@@ -154,7 +154,7 @@ export default function HomePage() {
                   <div className="relative aspect-[5/6] w-full md:aspect-square lg:aspect-[5/6]">
                     <VideoHero
                       video="/empreendimentos/sion/destaque.mp4"
-                      poster={projetoDestaque.render?.src ?? projetoDestaque.capa.src}
+                      poster="/empreendimentos/sion/destaque-poster.jpg"
                       alt={projetoDestaque.render?.alt ?? projetoDestaque.capa.alt ?? projetoDestaque.nome}
                       className="absolute inset-0 h-full w-full object-cover transition-transform duration-[1500ms] ease-out group-hover:scale-[1.04]"
                     />

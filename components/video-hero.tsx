@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 type Props = {
   video: string;
@@ -11,13 +11,38 @@ type Props = {
 
 export function VideoHero({ video, poster, className }: Props) {
   const ref = useRef<HTMLVideoElement>(null);
+  const [shouldLoad, setShouldLoad] = useState(false);
 
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+    if (typeof IntersectionObserver === 'undefined') {
+      setShouldLoad(true);
+      return;
+    }
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            setShouldLoad(true);
+            io.disconnect();
+            break;
+          }
+        }
+      },
+      { rootMargin: '200px 0px' },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!shouldLoad) return;
+    const el = ref.current;
+    if (!el) return;
     const tryPlay = () => {
       el.play().catch(() => {
-        // Autoplay bloqueado: poster permanece, sem botão clicável.
+        // Autoplay bloqueado: poster permanece.
       });
     };
     tryPlay();
@@ -27,7 +52,7 @@ export function VideoHero({ video, poster, className }: Props) {
       el.removeEventListener('canplay', tryPlay);
       el.removeEventListener('loadeddata', tryPlay);
     };
-  }, []);
+  }, [shouldLoad]);
 
   return (
     <video
@@ -37,7 +62,7 @@ export function VideoHero({ video, poster, className }: Props) {
       muted
       loop
       playsInline
-      preload="auto"
+      preload={shouldLoad ? 'auto' : 'none'}
       controls={false}
       disablePictureInPicture
       disableRemotePlayback
@@ -45,7 +70,7 @@ export function VideoHero({ video, poster, className }: Props) {
       className={className}
       style={{ pointerEvents: 'none' }}
     >
-      <source src={video} type="video/mp4" />
+      {shouldLoad && <source src={video} type="video/mp4" />}
     </video>
   );
 }
