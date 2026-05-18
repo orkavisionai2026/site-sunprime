@@ -26,7 +26,7 @@ export function HeroLogo() {
           alt="Sunprime"
           width={339}
           height={48}
-          quality={100}
+          quality={85}
           priority
           unoptimized
           fetchPriority="high"

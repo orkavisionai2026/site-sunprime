@@ -38,13 +38,28 @@ export function EmpreendimentosCarousel({ items }: Props) {
     el.scrollBy({ left: step * dir, behavior: 'smooth' });
   };
 
+  const onKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    if (e.key === 'ArrowRight') {
+      e.preventDefault();
+      scrollBy(1);
+    } else if (e.key === 'ArrowLeft') {
+      e.preventDefault();
+      scrollBy(-1);
+    }
+  };
+
   return (
     <div className="relative">
       <div
         ref={ref}
+        role="region"
+        aria-label="Carrossel de empreendimentos"
+        tabIndex={0}
+        onKeyDown={onKeyDown}
         className="
           flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth
           px-6 pb-3 sm:px-8 md:px-10 lg:px-16 xl:px-20
+          outline-none focus-visible:ring-2 focus-visible:ring-gold-400
           [scrollbar-width:none] [&::-webkit-scrollbar]:hidden
         "
       >

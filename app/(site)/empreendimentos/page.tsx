@@ -10,6 +10,13 @@ export const metadata: Metadata = {
   title: 'Empreendimentos',
   description:
     'Conheça todos os empreendimentos da Sunprime em Itapema, organizados por status: pré-lançamentos, em construção e entregues.',
+  alternates: { canonical: '/empreendimentos' },
+  openGraph: {
+    title: 'Empreendimentos · Sunprime',
+    description:
+      'Pré-lançamentos, em construção e entregues — arquitetura autoral pelo skyline de Itapema.',
+    url: '/empreendimentos',
+  },
 };
 
 export default function EmpreendimentosPage() {

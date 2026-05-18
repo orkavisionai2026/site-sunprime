@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Magnetic } from '@/components/magnetic';
 import type { MenuItem } from '@/lib/data';
 
@@ -18,6 +18,9 @@ export function Nav({ menu, whatsapp, whatsappUrl, nomePorSlug }: NavProps) {
   const router = useRouter();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const hamburgerRef = useRef<HTMLButtonElement>(null);
+  const overlayRef = useRef<HTMLDivElement>(null);
+  const closeRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 32);
@@ -40,6 +43,37 @@ export function Nav({ menu, whatsapp, whatsappUrl, nomePorSlug }: NavProps) {
         document.body.style.overflow = original;
       };
     }
+  }, [menuOpen]);
+
+  // Focus trap + ESC pra fechar — quando menu mobile abre
+  useEffect(() => {
+    if (!menuOpen) return;
+    closeRef.current?.focus();
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setMenuOpen(false);
+        hamburgerRef.current?.focus();
+        return;
+      }
+      if (e.key !== 'Tab') return;
+      const overlay = overlayRef.current;
+      if (!overlay) return;
+      const focusable = overlay.querySelectorAll<HTMLElement>(
+        'a, button, [tabindex]:not([tabindex="-1"])',
+      );
+      if (focusable.length === 0) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    };
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
   }, [menuOpen]);
 
   const isStudio = pathname?.startsWith('/studio');
@@ -83,10 +117,12 @@ export function Nav({ menu, whatsapp, whatsappUrl, nomePorSlug }: NavProps) {
         <div className="flex items-center gap-2 sm:gap-3 md:gap-10">
           {/* Hamburger — só mobile, à esquerda */}
           <button
+            ref={hamburgerRef}
             type="button"
             onClick={() => setMenuOpen(true)}
             aria-label="Abrir menu"
             aria-expanded={menuOpen}
+            aria-controls="mobile-menu"
             className="
               flex h-10 w-10 items-center justify-center rounded-full
               border border-white/15 bg-white/5 text-paper-100 backdrop-blur-md
@@ -246,6 +282,11 @@ export function Nav({ menu, whatsapp, whatsappUrl, nomePorSlug }: NavProps) {
 
       {/* Overlay mobile — full-screen menu */}
       <div
+        id="mobile-menu"
+        ref={overlayRef}
+        role="dialog"
+        aria-modal="true"
+        aria-label="Menu principal"
         data-open={menuOpen}
         aria-hidden={!menuOpen}
         className="
@@ -257,6 +298,7 @@ export function Nav({ menu, whatsapp, whatsappUrl, nomePorSlug }: NavProps) {
       >
         <div className="flex h-full flex-col px-6 pt-20 pb-10">
           <button
+            ref={closeRef}
             type="button"
             onClick={() => setMenuOpen(false)}
             aria-label="Fechar menu"

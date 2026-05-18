@@ -54,7 +54,7 @@ export function EmpreendimentoCard({
             ? undefined
             : { rotateX: rx, rotateY: ry, transformStyle: 'preserve-3d' }
         }
-        className="group relative block overflow-hidden rounded-xl bg-ink-800 will-change-transform"
+        className="group relative block overflow-hidden rounded-xl bg-ink-800 outline-none ring-gold-400 transition-shadow will-change-transform focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-ink-950"
       >
         <div className={`relative w-full ${aspectClass}`}>
           <Image

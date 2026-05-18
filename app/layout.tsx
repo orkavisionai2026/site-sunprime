@@ -15,9 +15,21 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'pt_BR',
     siteName: 'Sunprime',
+    images: [
+      {
+        url: '/hero-sequence/0060.jpg',
+        width: 1920,
+        height: 1080,
+        alt: 'Vista aérea de Meia Praia, Itapema — Sunprime Empreendimentos',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
+    images: ['/hero-sequence/0060.jpg'],
+  },
+  alternates: {
+    canonical: '/',
   },
 };
 

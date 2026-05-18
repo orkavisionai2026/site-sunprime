@@ -8,6 +8,13 @@ export const metadata: Metadata = {
   title: 'Sobre',
   description:
     'Manifesto, missão e valores da Sunprime Empreendimentos — incorporadora em Itapema/SC desde 2012.',
+  alternates: { canonical: '/sobre' },
+  openGraph: {
+    title: 'Sobre · Sunprime',
+    description:
+      'Manifesto, missão e valores da Sunprime — incorporadora em Itapema/SC desde 2012.',
+    url: '/sobre',
+  },
 };
 
 export default function SobrePage() {
@@ -50,13 +57,13 @@ export default function SobrePage() {
           </Reveal>
           {sobre.missaoImagem && (
             <Reveal delay={0.15}>
-              <div className="relative aspect-[4/5] overflow-hidden rounded-xl bg-ink-800">
+              <div className="relative aspect-[16/9] overflow-hidden rounded-xl bg-paper-50 p-6 sm:aspect-[3/2] sm:p-8 md:aspect-[4/5] md:p-10">
                 <Image
                   src={sobre.missaoImagem.src}
-                  alt={sobre.missaoImagem.alt ?? 'Missão Sunprime'}
+                  alt={sobre.missaoImagem.alt ?? 'Skyline ilustrado — Sunprime'}
                   fill
                   sizes="(min-width: 768px) 50vw, 100vw"
-                  className="object-cover"
+                  className="object-contain"
                 />
               </div>
             </Reveal>

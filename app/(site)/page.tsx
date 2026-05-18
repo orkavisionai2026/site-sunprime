@@ -4,6 +4,12 @@ import { EmpreendimentosCarousel } from '@/components/empreendimentos-carousel';
 import { HeroImageSequence } from '@/components/hero-image-sequence';
 import { HeroLogo } from '@/components/hero-logo';
 import { Marquee } from '@/components/marquee';
+import { Act2Skyline } from '@/components/mobile-narrative/act2';
+import { Act3Empreendimentos } from '@/components/mobile-narrative/act3';
+import { Act4Sion } from '@/components/mobile-narrative/act4';
+import { Act5Manifesto } from '@/components/mobile-narrative/act5';
+import { MobileScrollHint } from '@/components/mobile-narrative/scroll-hint';
+import { MobileStatement } from '@/components/mobile-narrative/statement';
 import { Reveal } from '@/components/reveal';
 import { SunriseText } from '@/components/sunrise-text';
 import { VideoHero } from '@/components/video-hero';
@@ -14,7 +20,8 @@ const PROJETO_DESTAQUE_SLUG = 'sion';
 export default function HomePage() {
   const empreendimentos = getEmpreendimentos();
   const institucional = getInstitucional();
-  const projetoDestaque = getEmpreendimento(PROJETO_DESTAQUE_SLUG);
+  // Fallback: se o slug hardcoded sumir do data, pega o primeiro por ordemDestaque
+  const projetoDestaque = getEmpreendimento(PROJETO_DESTAQUE_SLUG) ?? empreendimentos[0];
   const config = getConfiguracaoSite();
   const whatsappDestaque =
     projetoDestaque && config.whatsappUrl
@@ -28,7 +35,8 @@ export default function HomePage() {
       {/* ——— HERO — sequência de imagens controlada por scroll ————————————— */}
       <HeroImageSequence
         basePath="/hero-sequence"
-        basePathMobile="/hero-sequence-mobile"
+        basePathMobile="/hero-sequence-mobile-v2"
+        scrollHeightMobile={200}
         totalFrames={121}
         alt="Vista aérea de Meia Praia, Itapema — Sunprime Empreendimentos"
       >
@@ -41,10 +49,30 @@ export default function HomePage() {
         <div className="absolute inset-x-0 bottom-8 z-10 hidden justify-center md:flex">
           <p className="font-mono text-xs uppercase tracking-[0.3em] text-ink-300">↓ role</p>
         </div>
+        <MobileScrollHint />
       </HeroImageSequence>
 
+      {/* ——— MOBILE NARRATIVE — sections regulares, fluxo normal ————————— */}
+      <Act2Skyline />
+      <Act3Empreendimentos empreendimentos={empreendimentos} />
+      <MobileStatement />
+      {projetoDestaque && (
+        <Act4Sion
+          empreendimento={projetoDestaque}
+          videoSrc="/empreendimentos/sion/destaque.mp4"
+          whatsappUrl={whatsappDestaque}
+        />
+      )}
+      <div className="relative border-y border-ink-800/60 bg-ink-950 py-8 md:hidden">
+        <Marquee items={empreendimentos.map((e) => e.nome)} duration={32} />
+      </div>
+      <Act5Manifesto
+        versos={institucional.manifestoVersos}
+        manifestoTitulo={institucional.manifestoTitulo}
+      />
+
       {/* ——— INTRO (eyebrow + título + CTAs) ————————————————————————————— */}
-      <section className="relative bg-ink-950 px-6 py-20 sm:px-8 sm:py-24 md:px-10 md:py-32 lg:px-16 lg:py-40 xl:px-20">
+      <section className="relative hidden bg-ink-950 px-6 py-20 sm:px-8 sm:py-24 md:block md:px-10 md:py-32 lg:px-16 lg:py-40 xl:px-20">
         <div className="mx-auto max-w-5xl">
           <Reveal>
             <span className="eyebrow">Sunprime · Itapema · desde {institucional.anoFundacao}</span>
@@ -84,7 +112,7 @@ export default function HomePage() {
       </section>
 
       {/* ——— CARROSSEL DE EMPREENDIMENTOS ————————————————————————————————— */}
-      <section className="relative bg-ink-950 pt-2 pb-16 sm:pb-20 md:pb-24">
+      <section className="relative hidden bg-ink-950 pt-2 pb-16 sm:pb-20 md:block md:pb-24">
         <div className="mx-auto mb-8 flex max-w-7xl flex-wrap items-end justify-between gap-4 px-6 sm:mb-10 sm:px-8 md:px-10 lg:px-16 xl:px-20">
           <div>
             <span className="eyebrow">Conheça nossos empreendimentos</span>
@@ -107,7 +135,7 @@ export default function HomePage() {
       <CinematicSection
         offset={100}
         fromScale={0.95}
-        className="overflow-hidden bg-ink-950 px-4 py-20 sm:px-6 sm:py-24 md:px-10 md:py-32 lg:py-40"
+        className="hidden overflow-hidden bg-ink-950 px-4 py-20 sm:px-6 sm:py-24 md:block md:px-10 md:py-32 lg:py-40"
       >
         <div className="mx-auto max-w-6xl">
           <div
@@ -138,7 +166,7 @@ export default function HomePage() {
 
       {/* ——— DESTAQUE EDITORIAL — projeto-bandeira (Sion) ———————————————— */}
       {projetoDestaque && (
-        <CinematicSection className="relative overflow-hidden bg-ink-950 px-6 py-20 sm:py-24 md:px-10 md:py-32 lg:py-40">
+        <CinematicSection className="relative hidden overflow-hidden bg-ink-950 px-6 py-20 sm:py-24 md:block md:px-10 md:py-32 lg:py-40">
           <div className="mx-auto max-w-7xl">
             <Reveal>
               <span className="eyebrow text-gold-400">Lançamento em destaque</span>
@@ -237,12 +265,12 @@ export default function HomePage() {
       )}
 
       {/* ——— MARQUEE ————————————————————————————————————————————————————— */}
-      <div className="relative border-y border-ink-800/60 bg-ink-950 py-10 md:py-16">
+      <div className="relative hidden border-y border-ink-800/60 bg-ink-950 py-10 md:block md:py-16">
         <Marquee items={empreendimentos.map((e) => e.nome)} duration={38} />
       </div>
 
       {/* ——— MANIFESTO ————————————————————————————————————————————————————— */}
-      <CinematicSection className="relative border-y border-ink-800/60 bg-gradient-to-b from-ink-950 via-ocean-900/40 to-ink-950 px-6 py-20 sm:py-24 md:px-10 md:py-32 lg:py-40">
+      <CinematicSection className="relative hidden border-y border-ink-800/60 bg-gradient-to-b from-ink-950 via-ocean-900/40 to-ink-950 px-6 py-20 sm:py-24 md:block md:px-10 md:py-32 lg:py-40">
         <div className="mx-auto max-w-4xl text-center">
           <Reveal>
             <span className="eyebrow">{institucional.manifestoTitulo}</span>
@@ -268,7 +296,7 @@ export default function HomePage() {
       </CinematicSection>
 
       {/* ——— CTA ———————————————————————————————————————————————————————— */}
-      <CinematicSection className="relative bg-ink-950 px-6 py-20 sm:py-24 md:px-10 md:py-32 lg:py-36">
+      <CinematicSection className="relative hidden bg-ink-950 px-6 py-20 sm:py-24 md:block md:px-10 md:py-32 lg:py-36">
         <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-[1.2fr_1fr]">
           <Reveal>
             <h2 className="display text-3xl text-paper-50 sm:text-4xl md:text-5xl lg:text-6xl">

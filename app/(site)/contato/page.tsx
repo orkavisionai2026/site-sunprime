@@ -7,6 +7,13 @@ export const metadata: Metadata = {
   title: 'Contato',
   description:
     'Fale com a Sunprime Empreendimentos. WhatsApp, telefone, e-mail e endereço em Meia Praia, Itapema/SC.',
+  alternates: { canonical: '/contato' },
+  openGraph: {
+    title: 'Contato · Sunprime',
+    description:
+      'WhatsApp, telefone, e-mail e endereço em Meia Praia, Itapema/SC.',
+    url: '/contato',
+  },
 };
 
 export default function ContatoPage() {

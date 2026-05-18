@@ -42,8 +42,8 @@ export function CinematicSection({
 
   // Spring dá a sensação "viscosa" da animação acompanhar o Lenis
   const progress = useSpring(scrollYProgress, {
-    stiffness: 140,
-    damping: 30,
+    stiffness: 200,
+    damping: 22,
     mass: 0.4,
     restDelta: 0.001,
   });

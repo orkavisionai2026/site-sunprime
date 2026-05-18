@@ -20,9 +20,26 @@ export async function generateStaticParams(): Promise<Params[]> {
 export function generateMetadata({ params }: { params: Params }): Metadata {
   const emp = getEmpreendimento(params.slug);
   if (!emp) return { title: 'Empreendimento não encontrado' };
+  const description = emp.descricao[0]?.slice(0, 160) ?? emp.status.titulo;
+  const ogImage = emp.render?.src ?? emp.capa.src;
+  const ogAlt = emp.render?.alt ?? emp.capa.alt ?? emp.nome;
   return {
     title: emp.nome,
-    description: emp.descricao[0]?.slice(0, 160) ?? emp.status.titulo,
+    description,
+    alternates: {
+      canonical: `/empreendimentos/${emp.slug}`,
+    },
+    openGraph: {
+      title: `${emp.nome} · Sunprime`,
+      description,
+      url: `/empreendimentos/${emp.slug}`,
+      images: [{ url: ogImage, alt: ogAlt }],
+    },
+    twitter: {
+      title: `${emp.nome} · Sunprime`,
+      description,
+      images: [ogImage],
+    },
   };
 }
 
@@ -30,8 +47,32 @@ export default function EmpreendimentoPage({ params }: { params: Params }) {
   const emp = getEmpreendimento(params.slug);
   if (!emp) notFound();
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Residence',
+    name: emp.nome,
+    description: emp.descricao[0] ?? emp.status.titulo,
+    image: (emp.render?.src ?? emp.capa.src),
+    url: `/empreendimentos/${emp.slug}`,
+    ...(emp.localizacao?.cidade
+      ? {
+          address: {
+            '@type': 'PostalAddress',
+            addressLocality: emp.localizacao.cidade,
+            addressRegion: emp.localizacao.uf,
+            addressCountry: 'BR',
+            ...(emp.localizacao.bairro ? { addressArea: emp.localizacao.bairro } : {}),
+          },
+        }
+      : {}),
+  };
+
   return (
     <article className="bg-ink-950 text-paper-100">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* ——— HERO ————————————————————————————————————————————————————————— */}
       <section className="relative h-[80vh] min-h-[560px] w-full overflow-hidden sm:h-[85vh] sm:min-h-[640px]">
         <Image

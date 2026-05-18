@@ -30,7 +30,14 @@ type Props = {
   /** Altura do scroll-spacer em mobile (<768px). Default 200 (=1x scroll extra). Reduz "demora" pra rolar até a próxima seção. */
   scrollHeightMobile?: number;
   alt: string;
+  /** Filhos que ficam "colados" sobre o canvas (overlay pinned). Ex: pins, logo. */
   children?: ReactNode;
+  /**
+   * Filhos que ROLAM por cima do canvas (sections reais). Renderizado depois
+   * do sticky com `margin-top: -100svh` pra sobrepor o pin. Use isso pra
+   * narrativa em sections — cada section vira um trecho real de scroll.
+   */
+  scrollingChildren?: ReactNode;
 };
 
 /**
@@ -57,6 +64,7 @@ export function HeroImageSequence({
   scrollHeightMobile = 200,
   alt,
   children,
+  scrollingChildren,
 }: Props) {
   const sectionRef = useRef<HTMLElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -64,6 +72,7 @@ export function HeroImageSequence({
   const lastDrawnRef = useRef<number>(-1);
   const rafRef = useRef<number | null>(null);
   const pendingFrameRef = useRef<number>(0);
+  const memoryStateRef = useRef<'full' | 'reduced'>('full');
 
   const reduced = useReducedMotion();
   const [loadedCount, setLoadedCount] = useState(0);
@@ -262,12 +271,44 @@ export function HeroImageSequence({
       Math.max(0, Math.round(v * (totalFrames - 1))),
     );
     pendingFrameRef.current = idx;
-    if (rafRef.current != null) return;
-    rafRef.current = requestAnimationFrame(() => {
-      rafRef.current = null;
-      const target = pendingFrameRef.current;
-      if (target !== lastDrawnRef.current) drawFrame(target);
-    });
+    if (rafRef.current != null) {
+      // continua — mas ainda checamos memória abaixo
+    } else {
+      rafRef.current = requestAnimationFrame(() => {
+        rafRef.current = null;
+        const target = pendingFrameRef.current;
+        if (target !== lastDrawnRef.current) drawFrame(target);
+      });
+    }
+
+    // ============================================
+    // Memory pressure relief (mobile only)
+    // Quando entra na faixa do Ato 4 (>0.7), descarrega os frames 0-79.
+    // Os frames 80-120 são suficientes pros Atos 4 e 5. Em scroll-back
+    // pra <0.5, recarrega tudo do cache do browser.
+    // ============================================
+    const isMobileMode = !!basePathMobile && activeBase === basePathMobile;
+    if (!isMobileMode) return;
+
+    if (v > 0.7 && memoryStateRef.current === 'full') {
+      memoryStateRef.current = 'reduced';
+      const imgs = imagesRef.current;
+      const cap = Math.min(80, imgs.length);
+      for (let i = 0; i < cap; i++) {
+        const img = imgs[i];
+        if (img && img.src) img.src = '';
+      }
+    } else if (v < 0.5 && memoryStateRef.current === 'reduced' && activeBase) {
+      memoryStateRef.current = 'full';
+      const imgs = imagesRef.current;
+      const cap = Math.min(80, imgs.length);
+      for (let i = 0; i < cap; i++) {
+        const img = imgs[i];
+        if (img && !img.src) {
+          img.src = `${activeBase}/${String(i + 1).padStart(padding, '0')}.${ext}`;
+        }
+      }
+    }
   });
 
   useEffect(() => {
@@ -326,6 +367,17 @@ export function HeroImageSequence({
 
           {children}
         </div>
+
+        {/* Sections que ROLAM por cima do canvas. Negative margin sobrepõe
+            o sticky pin pra dar o efeito de "section passando pelo canvas". */}
+        {scrollingChildren && (
+          <div
+            className="relative z-10"
+            style={{ marginTop: '-100svh' }}
+          >
+            {scrollingChildren}
+          </div>
+        )}
       </section>
     </HeroSequenceProgress.Provider>
   );
